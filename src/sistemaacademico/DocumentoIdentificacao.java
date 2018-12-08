@@ -1,20 +1,12 @@
 package sistemaacademico;
-/**
- *
- * @author Wanderley de Souza Alencar
- */
-/*
-* Nome.......: DocumentoIdentificacao
-* Objetivo...: Representa um documento de identificação de uma Pessoa
-* Observacoes:
-*/
+
 public class DocumentoIdentificacao {
     /*
-    * tipo                          <veja tipos de documentos possíveis>
+    * tipo                          <veja tipos de documentos >
     * numero                        1 .. 
-    * complemento                   complemento do número (por exemplo, letras)
+    * complemento                   complemento do n�mero (por exemplo, letras)
     * orgaoExpedidor                orgão que expediu o documento
-    * pais                          código do país emissor do documento
+    * pais                          c�digo do pa�s emissor do documento
     */
     private int                     tipo;
     private long                    numero;

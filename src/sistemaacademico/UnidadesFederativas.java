@@ -1,12 +1,13 @@
 package sistemaacademico;
 import java.util.ArrayList;
 public class  UnidadesFederativas {
-    private ArrayList<ElementoDescritivo>           ufs;
+	
+    private ArrayList<ElementoDescritivo> ufs;
         
     public UnidadesFederativas() {
         ElementoDescritivo  elementoDescritivo;
         
-        this.ufs            = new ArrayList();
+        this.ufs            = new ArrayList<ElementoDescritivo>();
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(0, "DS", "Desconhecido");
         this.ufs.add(elementoDescritivo); 
@@ -20,22 +21,22 @@ public class  UnidadesFederativas {
         elementoDescritivo.setElementoDescritivo(3, "AM", "Amazonas");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(4, "AP", "Amapá");
+        elementoDescritivo.setElementoDescritivo(4, "AP", "Amap�");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(5, "BA", "Bahia");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(6, "CE", "Ceará");
+        elementoDescritivo.setElementoDescritivo(6, "CE", "Cear�");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(7, "DF", "Distrito Federal");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(8, "ES", "Espírito Santo");
+        elementoDescritivo.setElementoDescritivo(8, "ES", "Esp�rito Santo");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(9, "GO", "Goiás");
+        elementoDescritivo.setElementoDescritivo(9, "GO", "Goi�s");
         this.ufs.add(elementoDescritivo);     
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(10, "MA", "Santa Catarina");
@@ -50,19 +51,19 @@ public class  UnidadesFederativas {
         elementoDescritivo.setElementoDescritivo(13, "MT", "Mato Grosso");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(14, "PA", "Pará");
+        elementoDescritivo.setElementoDescritivo(14, "PA", "Par�");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(15, "PB", "Paraíba");
+        elementoDescritivo.setElementoDescritivo(15, "PB", "Para�ba");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(16, "PE", "Pernambuto");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(17, "PI", "Piauí");
+        elementoDescritivo.setElementoDescritivo(17, "PI", "Piau�");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(18, "PR", "Paraná");
+        elementoDescritivo.setElementoDescritivo(18, "PR", "Paran�");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(19, "RJ", "Rio de Janeiro");
@@ -71,7 +72,7 @@ public class  UnidadesFederativas {
         elementoDescritivo.setElementoDescritivo(20, "RN", "Rio Grande do Norte");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(21, "RO", "Rondônia");
+        elementoDescritivo.setElementoDescritivo(21, "RO", "Rond�nia");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(22, "RR", "Roraima");
@@ -86,23 +87,17 @@ public class  UnidadesFederativas {
         elementoDescritivo.setElementoDescritivo(25, "SE", "Sergipe");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(26, "SP", "São Paulo");
+        elementoDescritivo.setElementoDescritivo(26, "SP", "S�o Paulo");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(27, "TO", "Tocantins");
         this.ufs.add(elementoDescritivo);         
     }
-    /**
-     * @return A coleção das siglas das unidades da federação brasileira.
-     */
+   
     public ArrayList<ElementoDescritivo> getUfs() {
         return (this.ufs);
     }
-    /**
-     *
-     * @param index Índice, na coleção de unidades da federação, que se deseja recuperar.
-     * @return A UF desejada ou, se inexistente, um elemento vazio.
-     */
+
     public ElementoDescritivo getUfs(int index) {
         if ((index >= 0) && (index < ufs.size())) {
             return (this.ufs.get(index));
@@ -111,12 +106,7 @@ public class  UnidadesFederativas {
             return (new ElementoDescritivo());
         }
     }
-    /**
-     * 
-     * @param str Sigla da unidade da federação a ser localizada na coleção de UFs.
-     * @return O índice, na coleção de UFs, onde está localizada a unidade 
-     *         desejada ou -1 se inexistente.
-     */
+  
     public int indexOf(String str) {
         int i;
         for (i = 0; (i < this.ufs.size()); i++) {
@@ -126,22 +116,17 @@ public class  UnidadesFederativas {
         }
         return (-1);
     }
-    /**
-     * @return Tamanho da coleção de unidades federativas.
-    */
+   
     public int size() {
         return(this.ufs.size());
     }
-    /**
-     * 
-     * @param index Índice da uniade federativa desejado para exibição.
-     */    
+   
     public void show(int index) {
         System.out.println();
         System.out.println("------------------");
         System.out.println("Unidade Federativa");
         System.out.println("------------------");
-        System.out.println("Código..........: " + this.getUfs(index).getCodigo());
+        System.out.println("C�digo..........: " + this.getUfs(index).getCodigo());
         System.out.println("Descr. Abreviada: " + this.getUfs(index).getDescricaoAbreviada());
         System.out.println("Descr. Completa.: " + this.getUfs(index).getDescricaoCompleta());
         System.out.println("------------------");

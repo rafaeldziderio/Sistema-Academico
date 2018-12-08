@@ -1,23 +1,8 @@
 package sistemaacademico;
-/**
- *
- * @author Wanderley de Souza Alencar
- */
-/*
-* Nome.......: Acadêmico
-* Objetivo...: Representar uma pessoa que exerce o papel de acadêmico(a) na 
-*              instituição de ensino.
-* Observacoes:
-*/
+
 public class Academico extends Pessoa {
-    long                            matricula;
-    int                             situacaoAcademica;
-    //
-    // A equipe responsável deverá verificar se há necessidade de outros
-    // atributos e métodos para inseri-los....
-    // 
-    // Observação: Lembre-se que devo poder cadastrar, alterar, consultar e 
-    // excluir pelo número de matricula...
+    long matricula;
+    int situacaoAcademica;
 
     @Override
     public void cadastrar() {
