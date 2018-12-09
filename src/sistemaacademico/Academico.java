@@ -1,25 +1,38 @@
 package sistemaacademico;
 
 public class Academico extends Pessoa {
-    long matricula;
-    int situacaoAcademica;
+    private long matricula;
+    private int situacaoAcademica;
+    Pessoa pessoa;
+    
+    public long getMatricula() {
+		return matricula;
+	}
 
-    @Override
-    public void cadastrar() {
+	public void setMatricula(long matricula) {
+		this.matricula = matricula;
+	}
+
+	public int getSituacaoAcademica() {
+		return situacaoAcademica;
+	}
+
+	public void setSituacaoAcademica(int situacaoAcademica) {
+		this.situacaoAcademica = situacaoAcademica;
+	}
+
+	public void cadastrar(long matricula, int situacaoAcademicoo, Pessoa pessoa) {
+		
+    }
+
+    public void alterar(DocumentoIdentificacao documento) {
         
     }
 
-    @Override
-    public void alterar(DocumentoIdentificacao documento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public void excluir(DocumentoIdentificacao documento) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
-    @Override
     public Pessoa consultar(DocumentoIdentificacao documento) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
