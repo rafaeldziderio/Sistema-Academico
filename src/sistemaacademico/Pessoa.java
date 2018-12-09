@@ -66,7 +66,52 @@ public abstract class Pessoa {
 		return documento.toString();
 	}
 	public void setDocumento(int tipo, long numero, String complemento, String orgaoExpedidor, int pais) {
-		 documento = new DocumentoIdentificacao(tipo, numero, complemento, orgaoExpedidor, pais);
+		this.documento = new DocumentoIdentificacao(tipo, numero, complemento, orgaoExpedidor, pais);
+	}
+	public String getEndereco() {
+		return endereco.toString();
+	}
+	public void setEndereco(int tipoLogradouro, int codigoLogradouro, String descricaoLogradouro, String complementoLogradouro,
+			int numero, String quadra, String lote, String bairro, long municipio, int unidadeFederacao, int pais,
+			String referencia) {
+		this.endereco = new Endereco(tipoLogradouro, codigoLogradouro, descricaoLogradouro, complementoLogradouro, numero, 
+				quadra, lote, bairro, municipio, unidadeFederacao, pais, referencia);
+	}
+	public String getTelefoneResidencial() {
+		return telefoneResidencial.toString();
+	}
+	public String getTelefoneComercial() {
+		return telefoneComercial.toString();
+	}
+	public String getTelefoneAlternativo() {
+		return telefoneAlternativo.toString();
+	}
+	public void setTelefoneResidencial(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+		this.telefoneResidencial = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
+	}
+	public void setTelefoneComercial(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+		this.telefoneComercial = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
+	}
+	public void setTelefoneAlternativo(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+		this.telefoneAlternativo = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
+	}
+	public String getEmailPessoal() {
+		return emailPessoal.toString();
+	}
+	public void setEmailPessoal(String prefixo, String sufixo) {
+		this.emailPessoal = new Email(prefixo, sufixo);
+	}
+	public String getEmailComercial() {
+		return emailComercial.toString();
+	}
+	public void setEmailComercial(String prefixo, String sufixo) {
+		this.emailComercial = new Email(prefixo, sufixo);
+	}
+	public String getEmailAlternativo() {
+		return emailAlternativo.toString();
+	}
+	public void setEmailAlternativo(String prefixo, String sufixo) {
+		this.emailAlternativo = new Email(prefixo, sufixo);
 	}
 	
 	public abstract void cadastrar();
