@@ -37,7 +37,6 @@ public abstract class Pessoa {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
 	public long getMunicipioNascimento() {
 		return municipioNascimento;
 	}
@@ -56,6 +55,7 @@ public abstract class Pessoa {
 	public void setPaisNascimento(int paisNascimento) {
 		this.paisNascimento = paisNascimento;
 	}
+	
 	public int getEstadoCivil() {
 		return estadoCivil;
 	}
