@@ -1,20 +1,16 @@
 package sistemaacademico;
 
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 public class Objeto {
 	
 	public static void main(String[] args) {
-		String nome;
+		UnidadesFederativas UF = new UnidadesFederativas();
+		int Escolha = 0;
+		Escolha = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a partir do CODIGO: \n" + UF.imprimirUF()));
 		
-		nome = JOptionPane.showInputDialog("Digite o nome: "); //Esse lê o que for digitado em formato string
-		JOptionPane.showMessageDialog(null, "Nome digitado: " + nome, "Mostrar o nome digitado", 1); //este só imprimi uma mensagem na tela
-		
-		int codigo;
-		
-		codigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o codigo: ")); //Faz a conversão de String para inteiro
-		JOptionPane.showMessageDialog(null, "Inteiro digitado: " + codigo, "Usar inteiro", 2);  //IMPRIMI NORMAL
-		
-		//dentro do JOptionane.showMENSAGEDIALOG tem  um numero la no final, esse numero é só pra mudar o simbolo que aparece la na tela 
+		JOptionPane.showMessageDialog(null, Escolha);
 	}
 }

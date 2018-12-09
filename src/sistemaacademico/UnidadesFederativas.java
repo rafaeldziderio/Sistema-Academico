@@ -3,10 +3,9 @@ import java.util.ArrayList;
 public class  UnidadesFederativas {
 	
     private ArrayList<ElementoDescritivo> ufs;
-        
+    
     public UnidadesFederativas() {
-        ElementoDescritivo  elementoDescritivo;
-        
+    	ElementoDescritivo  elementoDescritivo;
         this.ufs            = new ArrayList<ElementoDescritivo>();
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(0, "DS", "Desconhecido");
@@ -131,4 +130,13 @@ public class  UnidadesFederativas {
         System.out.println("Descr. Completa.: " + this.getUfs(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+    
+    public String imprimirUF() {
+    	String a = "";
+    	for(ElementoDescritivo EL: ufs) {
+    		a = a + "UF: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
+    
 }
