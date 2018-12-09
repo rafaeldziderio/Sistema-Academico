@@ -9,6 +9,6 @@ package sistemaacademico;
 * Observacoes:
 */
 public class Email {
-    String                          prefixo;
-    String                          sufixo;
+    String prefixo;
+    String sufixo;
 }

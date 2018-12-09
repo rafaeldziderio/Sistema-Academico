@@ -13,7 +13,7 @@ public class Endereco {
     long municipio;
     int unidadeFederacao;
     int pais;
-    String referencia;             
+    String referencia;
 }
 
 

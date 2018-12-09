@@ -18,8 +18,8 @@ public abstract class Pessoa {
     private Email emailPessoal;           // e-mails podem ser deixados em branco
     private Email emailComercial;
     private Email emailAlternativo;
-       
-    public String getPrenome() {
+    
+	public String getPrenome() {
 		return prenome;
 	}
 	public void setPrenome(String prenome) {
@@ -37,6 +37,7 @@ public abstract class Pessoa {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
+	
 	public long getMunicipioNascimento() {
 		return municipioNascimento;
 	}
@@ -60,6 +61,12 @@ public abstract class Pessoa {
 	}
 	public void setEstadoCivil(int estadoCivil) {
 		this.estadoCivil = estadoCivil;
+	}
+	public String getDocumento(){
+		return documento.toString();
+	}
+	public void setDocumento(int tipo, long numero, String complemento, String orgaoExpedidor, int pais) {
+		 documento = new DocumentoIdentificacao(tipo, numero, complemento, orgaoExpedidor, pais);
 	}
 	
 	public abstract void cadastrar();

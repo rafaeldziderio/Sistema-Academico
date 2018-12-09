@@ -9,10 +9,10 @@ package sistemaacademico;
 * Observacoes:
 */
 public class Telefone {
-    int                             tipo;
-    int                             classe;
-    int                             ddi;
-    int                             ddd;
-    int                             numero;
-    int                             ramal;
+    int tipo;
+    int classe;
+    int ddi;
+    int ddd;
+    int numero;
+    int ramal;
 }
