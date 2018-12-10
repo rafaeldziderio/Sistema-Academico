@@ -16,10 +16,11 @@ public class SistemaAcademico {
         public static void main(String[] args) {  
         	int i= 0;
         	int j =0;
+        	String[] option = {"Cadastrar", "Alterar", "Consultar", "Excluir"};
         	boolean a = true;
         	do {
 
-        		while(a) {
+        		/*while(a) {
         			try {
         				i = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o que quer fazer:\n 1 - Cadastrar\n 2 - Alterar\n 3 - Consultar\n 4 - Excluir"));
         				System.out.println(i);
@@ -35,10 +36,12 @@ public class SistemaAcademico {
         				}
         				JOptionPane.showMessageDialog(null,"Digite um número de 1 até 4: ");
         			}
-        		}
+        		}*/
+        		
+        		i = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir. ", "Sistema Acadêmico", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
 
 
-        		if(i==1) {
+        		if(i==0) {
         			Academico academico = new Academico(academicos);
         			academico.cadastrar();
         			academicos.add(academico);
@@ -46,7 +49,7 @@ public class SistemaAcademico {
         		}
         		
 
-        		if(i == 2 || i == 3 || i == 4) {
+        		if(i == 1 || i == 2 || i == 3) {
         			int k =0;
         			TiposDocumentos TD = new TiposDocumentos();
         			
@@ -89,7 +92,7 @@ public class SistemaAcademico {
         		
         		}
 
-        
+        		
 
         		j = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite 1 para terminar o programa e 0 para continuar"));
 
