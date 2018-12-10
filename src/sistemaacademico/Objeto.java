@@ -53,24 +53,30 @@ public class Objeto {
 						JOptionPane.showMessageDialog(null, "Digite um número pertencente ao intervalo:");
 					}
 				}
+				long N;
 				if(k == 0) {
-					JOptionPane.showInputDialog(null, "Digite o número do documento do tipo : ");
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo : "));
+					
 				}
 				
 				if(k == 1) {
-					JOptionPane.showInputDialog(null, "Digite o número do documento do tipo desconhecido: ");
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Registro Geral: "));
+					
 				}
 				
 				if(k == 2) {
-					JOptionPane.showInputDialog(null, "Digite o número do documento do tipo desconhecido: ");
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo CPF/MF: "));
 				}
 				
 				if(k == 3) {
-					JOptionPane.showInputDialog(null, "Digite o número do documento do tipo desconhecido: ");
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Carterira Proficional: "));
 				}
 				
 				if(k == 4) {
-					JOptionPane.showInputDialog(null, "Digite o número do documento do tipo desconhecido: ");
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Passaporte: "));
+				}
+				if(k == 5) {
+					N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento: "));
 				}
 				//academico.alterar(DocumentoIndetificacao k);
 			}
