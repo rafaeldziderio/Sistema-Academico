@@ -17,6 +17,10 @@ public class DocumentoIdentificacao {
     private int                     pais;
     TiposDocumentos Tipo = new TiposDocumentos(); //Isso para ter acesso ao Arraylist criado de tipos
     
+    public DocumentoIdentificacao() {
+    	
+    }
+    
     public DocumentoIdentificacao(int tipo, long numero, String complemento, String orgaoExpedidor, int pais) {
     	this.tipo = tipo;
     	this.numero = numero;

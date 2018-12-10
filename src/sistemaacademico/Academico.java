@@ -1,22 +1,21 @@
 package sistemaacademico;
 
-import java.sql.Date;
-import java.util.InputMismatchException;
-
 import javax.swing.JOptionPane;
+
+
 
 public class Academico extends Pessoa {
     private long matricula;
     private int situacaoAcademica;
     
-    public Academico(long matricula, int situacaoAcademica, DocumentoIdentificacao documento
-    		, String prenome , String sobrenome, Date dataNascimento, long municipioNascimento
-    		, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco, Telefone telefoneResidencial
-    		, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal, Email emailComercial, Email emailAlternativo)
-    {
-    	this.matricula = matricula;
-    	this.situacaoAcademica = situacaoAcademica;
-    }
+    //public Academico(long matricula, int situacaoAcademica, DocumentoIdentificacao documento
+    //		, String prenome , String sobrenome, Date dataNascimento, long municipioNascimento
+    //		, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco, Telefone telefoneResidencial
+    //		, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal, Email emailComercial, Email emailAlternativo)
+    //{
+    //	this.matricula = matricula;
+    //	this.situacaoAcademica = situacaoAcademica;
+    //}
     
     public long getMatricula() {
 		return matricula;
@@ -56,17 +55,21 @@ public class Academico extends Pessoa {
 				
 				while(a) {
 					int z = 0;
+					
 					nome = JOptionPane.showInputDialog(null, "Digite seu nome: ");
 					for(int i = 0; i < nome.length(); i++)
 					{
 						char x = nome.charAt(i);
 						for(int j = 0; j < 10; j++)
 						{
-							if( x == j )
+							String string1 = Character.toString(x);
+							String string2 = Integer.toString(j);
+							if( string1.equals(string2) )
 							{
 								z++;
 							}
 						}
+						
 					}
 					if(z == 0)
 					{
@@ -94,7 +97,6 @@ public class Academico extends Pessoa {
 					}
 				}
 				JOptionPane.showMessageDialog(null,(UF.getUfs(escolha).getDescricaoCompleta()));
-				academico.
     }
 
     public void alterar(DocumentoIdentificacao documento) {
@@ -102,7 +104,7 @@ public class Academico extends Pessoa {
     }
 
     public void excluir(DocumentoIdentificacao documento) {
-    
+    	
     }
 
     public Pessoa consultar(DocumentoIdentificacao documento) {

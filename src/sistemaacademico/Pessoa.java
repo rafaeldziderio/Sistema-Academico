@@ -4,7 +4,29 @@ import java.util.Date;
 
 public abstract class Pessoa {
     DocumentoIdentificacao documento;              
-    private String prenome;                // Exemplo: Maria Luiza
+    public Pessoa(DocumentoIdentificacao documento, String prenome, String sobrenome, Date dataNascimento,
+			long municipioNascimento, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco,
+			Telefone telefoneResidencial, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal,
+			Email emailComercial, Email emailAlternativo) 
+    {
+		this.documento = documento;
+		this.prenome = prenome;
+		this.sobrenome = sobrenome;
+		this.dataNascimento = dataNascimento;
+		this.municipioNascimento = municipioNascimento;
+		this.ufNascimento = ufNascimento;
+		this.paisNascimento = paisNascimento;
+		this.estadoCivil = estadoCivil;
+		this.endereco = endereco;
+		this.telefoneResidencial = telefoneResidencial;
+		this.telefoneComercial = telefoneComercial;
+		this.telefoneAlternativo = telefoneAlternativo;
+		this.emailPessoal = emailPessoal;
+		this.emailComercial = emailComercial;
+		this.emailAlternativo = emailAlternativo;
+	}
+    
+	private String prenome;                // Exemplo: Maria Luiza
     private String sobrenome;              // da Silva Ferreira Prado
     private Date dataNascimento;
     private long municipioNascimento;    // Código do munícipio
@@ -18,6 +40,8 @@ public abstract class Pessoa {
     private Email emailPessoal;           // e-mails podem ser deixados em branco
     private Email emailComercial;
     private Email emailAlternativo;
+    
+    
     
 	public String getPrenome() {
 		return prenome;

@@ -39,12 +39,13 @@ public class SistemaAcademico {
         			academico.cadastrar();
         			academicos.add(academico);
         		}
+        		
 
-
-        		if(i==2) {
+        		if(i == 2 || i == 3 || i == 4) {
         			int k =0;
         			TiposDocumentos TD = new TiposDocumentos();
-        			Academico academico = new Academico();
+        			
+        			DocumentoIdentificacao DI = new DocumentoIdentificacao();
 
         			while(a) {
         				try {
@@ -59,44 +60,30 @@ public class SistemaAcademico {
         				}
         			}
         			long N;
-        			if(k == 0) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo : "));
-
+        			int meupau=0;
+        			
+        			N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Registro Geral: "));
+        			for(int z = 0; z < academicos.size(); z++) {
+        				if((academicos.get(z).getDocumento().getNumero()) == N && (academicos.get(z).getDocumento().getTipo()) == k) {
+        					DI = academicos.get(z).getDocumento();
+        					meupau = z;
+        				}
         			}
-
-        			if(k == 1) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Registro Geral: "));
-
+        			
+        			
+        			if(i == 2) {
+        				academicos.get(meupau).alterar(DI);
         			}
-
-        			if(k == 2) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo CPF/MF: "));
+        			if(i == 3) {
+        				academicos.get(meupau).consultar(DI);
         			}
-
-        			if(k == 3) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Carterira Proficional: "));
+        			if(i == 4) {
+        				academicos.get(meupau).excluir(DI);
         			}
-
-        			if(k == 4) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Passaporte: "));
-        			}
-        			if(k == 5) {
-        				N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento: "));
-        			}
-        			//academico.alterar( k);
+        		
         		}
 
-        		if(i==3) {
-        			Academico academico = new Academico();
-        			//academico.consultar(documento)();
-
-        		}
-
-        		if(i==4) {
-        			Academico academico = new Academico();
-        			//academico.excluir(documento);
-
-        		}
+        
 
         		j = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite 1 para terminar o programa e 0 para continuar"));
 
