@@ -22,6 +22,7 @@ public class SistemaAcademico {
         		while(a) {
         			try {
         				i = Integer.parseInt(JOptionPane.showInputDialog(null,"Digite o que quer fazer:\n 1 - Cadastrar\n 2 - Alterar\n 3 - Consultar\n 4 - Excluir"));
+        				System.out.println(i);
         				if(i<=0 || i>4) {
         					JOptionPane.showMessageDialog(null, "Digite um número que pertença ao intervalo (1 a 4):");
         				}
@@ -29,6 +30,9 @@ public class SistemaAcademico {
         					break;
 
         			}catch(NumberFormatException e) {
+        				if(e.getMessage() == "null") {
+        					break;
+        				}
         				JOptionPane.showMessageDialog(null,"Digite um número de 1 até 4: ");
         			}
         		}

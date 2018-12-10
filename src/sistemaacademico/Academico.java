@@ -409,7 +409,7 @@ public class Academico extends Pessoa {
 			}
 		}
 		
-		int ab = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja digitar o email pessoal:"));
+		//int ab = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja digitar o email pessoal:"));
 		
 	}
 	
