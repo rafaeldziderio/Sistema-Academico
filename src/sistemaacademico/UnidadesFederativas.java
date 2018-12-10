@@ -2,7 +2,8 @@ package sistemaacademico;
 import java.util.ArrayList;
 public class  UnidadesFederativas {
 	
-    private ArrayList<ElementoDescritivo> ufs;
+
+	private ArrayList<ElementoDescritivo> ufs;
     
     public UnidadesFederativas() {
     	ElementoDescritivo  elementoDescritivo;

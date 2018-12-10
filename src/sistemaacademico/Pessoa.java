@@ -11,9 +11,9 @@ public abstract class Pessoa {
 	private String prenome;                // Exemplo: Maria Luiza
     private String sobrenome;              // da Silva Ferreira Prado
     private Date dataNascimento;
-    private long municipioNascimento;    // Código do munícipio
-    private int ufNascimento;
-    private int paisNascimento;
+    private String municipioNascimento;    // Código do munícipio
+    private String ufNascimento;
+    private String paisNascimento;
     private int estadoCivil;            // Código do estado civil
     private Endereco endereco;
     private Telefone telefoneResidencial;
@@ -22,9 +22,17 @@ public abstract class Pessoa {
     private Email emailPessoal;           // e-mails podem ser deixados em branco
     private Email emailComercial;
     private Email emailAlternativo;
+    private int uf;
     
     
     
+    
+	public int getUf() {
+		return uf;
+	}
+	public void setUf(int uf) {
+		this.uf = uf;
+	}
 	public String getPrenome() {
 		return prenome;
 	}
@@ -43,22 +51,22 @@ public abstract class Pessoa {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public long getMunicipioNascimento() {
+	public String getMunicipioNascimento() {
 		return municipioNascimento;
 	}
-	public void setMunicipioNascimento(long municipioNascimento) {
+	public void setMunicipioNascimento(String municipioNascimento) {
 		this.municipioNascimento = municipioNascimento;
 	}
-	public int getUfNascimento() {
+	public String getUfNascimento() {
 		return ufNascimento;
 	}
-	public void setUfNascimento(int ufNascimento) {
+	public void setUfNascimento(String ufNascimento) {
 		this.ufNascimento = ufNascimento;
 	}
-	public int getPaisNascimento() {
+	public String getPaisNascimento() {
 		return paisNascimento;
 	}
-	public void setPaisNascimento(int paisNascimento) {
+	public void setPaisNascimento(String paisNascimento) {
 		this.paisNascimento = paisNascimento;
 	}
 	
