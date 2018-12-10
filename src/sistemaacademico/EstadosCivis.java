@@ -73,4 +73,12 @@ public class EstadosCivis {
         System.out.println("Descr. Completa.: " + this.getEstadosCivis(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+    
+    public String imprimirEC() {
+    	String a = "";
+    	for(ElementoDescritivo EL: estadosCivis) {
+    		a = a + "Estado Civil: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
 }

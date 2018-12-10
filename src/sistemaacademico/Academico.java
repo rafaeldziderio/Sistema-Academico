@@ -8,16 +8,11 @@ import javax.swing.JOptionPane;
 
 public class Academico extends Pessoa {
 	
-	public Academico () {
-	
+	public Academico() {
+		
 	}
-    public Academico(DocumentoIdentificacao documento, String prenome, String sobrenome, Date dataNascimento,
-			long municipioNascimento, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco,
-			Telefone telefoneResidencial, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal,
-			Email emailComercial, Email emailAlternativo) {
-		super(documento, prenome, sobrenome, dataNascimento, municipioNascimento, ufNascimento, paisNascimento, estadoCivil,
-				endereco, telefoneResidencial, telefoneComercial, telefoneAlternativo, emailPessoal, emailComercial,
-				emailAlternativo);
+    public Academico(DocumentoIdentificacao documento, String prenome, String sobrenome) {
+		super(documento, prenome, sobrenome);
 	
 	}
 
@@ -44,73 +39,175 @@ public class Academico extends Pessoa {
 
 	public void cadastrar() {
 		UnidadesFederativas UF = new UnidadesFederativas();
-				int escolha = 0;
-				String nome = "";
-				long matricula=0;
-				boolean a = true;
-				
-				while(a) {
-					try {
-						matricula =Long.parseLong(JOptionPane.showInputDialog(null, "Digite sua matrícula: "));
-						break;
-						
-					}catch(NumberFormatException e) {
-						JOptionPane.showMessageDialog(null, "Digite uma matrícula válida!");
-						
-					}
-				}
-				JOptionPane.showMessageDialog(null,matricula);
-				this.matricula = matricula;
-				
-				while(a) {
-					int z = 0;
-					
-					nome = JOptionPane.showInputDialog(null, "Digite seu nome: ");
-					for(int i = 0; i < nome.length(); i++)
-					{
-						char x = nome.charAt(i);
-						for(int j = 0; j < 10; j++)
-						{
-							String string1 = Character.toString(x);
-							String string2 = Integer.toString(j);
-							if( string1.equals(string2) )
-							{
-								z++;
-							}
-						}
-						
-					}
-					if(z == 0)
-					{
-						break;
-					}
-					else
-					{
-						JOptionPane.showMessageDialog(null, "Digite um nome válido!");
-					}
-					
-		
-				}
-				JOptionPane.showMessageDialog(null,nome);
-					
-				while(a) {	
-					try {
-						escolha = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a partir do CODIGO: \n" + UF.imprimirUF()));
-						if(escolha<0 || escolha>27) {
-							JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
-						}
-						else
-							break;
-					}catch(NumberFormatException e) {
-						JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
-					}
-				}
-				JOptionPane.showMessageDialog(null,(UF.getUfs(escolha).getDescricaoCompleta()));
-    }
+		EstadosCivis EC = new EstadosCivis();
+		TiposDocumentos TD = new TiposDocumentos();
+		int escolha = 0;
+		int escolha1 = 0;
+		int escolha2 = 0;
+		long num = 0;
+		String com = "";
+		String org = "";
+		int pp = 0;
+		String prenome = "";
+		String sobrenome = "";
+		long matricula=0;
+		boolean a = true;
 
-    public void alterar(DocumentoIdentificacao documento) {
-        
+		while(a) {
+			try {
+				matricula =Long.parseLong(JOptionPane.showInputDialog(null, "Digite sua matrícula: "));
+				break;
+
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite uma matrícula válida!");
+
+			}
+		}
+		JOptionPane.showMessageDialog(null,matricula);
+		this.matricula = matricula;
+
+		while(a) {
+			int z = 0;
+
+			prenome = JOptionPane.showInputDialog(null, "Digite seu primeiro nome: ");
+			for(int i = 0; i < prenome.length(); i++)
+			{
+				char x = prenome.charAt(i);
+				for(int j = 0; j < 10; j++)
+				{
+					String string1 = Character.toString(x);
+					String string2 = Integer.toString(j);
+					if( string1.equals(string2) )
+					{
+						z++;
+					}
+				}
+
+			}
+			if(z == 0)
+			{
+				break;
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Digite um nome válido!");
+			}
+
+
+		}
+		JOptionPane.showMessageDialog(null,prenome);
+		
+		while(a) {
+			int z = 0;
+
+			sobrenome = JOptionPane.showInputDialog(null, "Digite seu sobrenome: ");
+			for(int i = 0; i < sobrenome.length(); i++)
+			{
+				char x = sobrenome.charAt(i);
+				for(int j = 0; j < 10; j++)
+				{
+					String string1 = Character.toString(x);
+					String string2 = Integer.toString(j);
+					if( string1.equals(string2) )
+					{
+						z++;
+					}
+				}
+
+			}
+			if(z == 0)
+			{
+				break;
+			}
+			else
+			{
+				JOptionPane.showMessageDialog(null, "Digite um nome válido!");
+			}
+
+
+		}
+		JOptionPane.showMessageDialog(null,sobrenome);
+
+		while(a) {	
+			try {
+				escolha = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a partir do CODIGO: \n" + UF.imprimirUF()));
+				if(escolha<0 || escolha>27) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		JOptionPane.showMessageDialog(null,(UF.getUfs(escolha).getDescricaoCompleta()));
+		
+		
+		while(a) {	
+			try {
+				escolha1 = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre os estados civis a seguir a partir do CODIGO: \n" + EC.imprimirEC()));
+				if(escolha1<0 || escolha1>7) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		JOptionPane.showMessageDialog(null,(EC.getEstadosCivis(escolha1).getDescricaoCompleta()));
+		
+		
+		while(a) {	
+			try {
+				escolha2 = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre os tipos de documentos a seguir a partir do CODIGO: \n" + TD.imprimirTD()));
+				if(escolha2<0 || escolha2>5) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		JOptionPane.showMessageDialog(null,(TD.getTipoDocumento(escolha2).getDescricaoCompleta()));
+		
+		if(escolha2 == 2){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		}
+		//if(escolha2 == 2){
+		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		//}
+		//if(escolha2 == 2){
+		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		//}
+		//if(escolha2 == 2){
+		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		//}
+		//if(escolha2 == 2){
+		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		//}
+		//if(escolha2 == 2){
+		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		//}
+		
+		com = JOptionPane.showInputDialog(null, "Digite, se existir, um complemento: ");
+		
+		org = JOptionPane.showInputDialog(null, "Digite o órgão expedidor: ");
+		
+		pp = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o código do país: "));
+		
+		DocumentoIdentificacao arroz = new DocumentoIdentificacao(escolha2,num,com,org,pp);
+		
+		this.Academico(arroz,prenome,sobrenome);
     }
+	
+	
+	public void alterar(DocumentoIdentificacao documento) {
+    	
+    }
+        
+    
 
     public void excluir(DocumentoIdentificacao documento) {
     	

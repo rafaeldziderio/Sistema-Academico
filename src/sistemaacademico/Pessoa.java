@@ -8,10 +8,7 @@ public abstract class Pessoa {
     public Pessoa() {
     	
     }
-    public Pessoa(DocumentoIdentificacao documento, String prenome, String sobrenome, Date dataNascimento,
-			long municipioNascimento, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco,
-			Telefone telefoneResidencial, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal,
-			Email emailComercial, Email emailAlternativo) 
+    public Pessoa(DocumentoIdentificacao documento, String prenome, String sobrenome) 
     {
 		this.documento = documento;
 		this.prenome = prenome;
