@@ -2,16 +2,20 @@ package sistemaacademico;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
 
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
 
 
 public class Academico extends Pessoa {
+	private static ArrayList <Academico> academicos = new ArrayList<Academico>();
 	
-	public Academico() {
-		
+	public Academico( ArrayList <Academico> academicos) {
+		Academico.academicos = academicos;
 	}
    
 
@@ -419,11 +423,36 @@ public class Academico extends Pessoa {
     
 
     public void excluir(DocumentoIdentificacao documento) {
+    	int index = 0;
     	
+    	for(int z = 0; z < academicos.size(); z++) {
+			if((academicos.get(z).getDocumento().getNumero()) == documento.getNumero() && (academicos.get(z).getDocumento().getTipo()) == documento.getTipo()) {
+				index = z;
+			}
+			
+		}
+    	
+    	JOptionPane.showMessageDialog(null, "Usuário excluído: "+academicos.get(index).getPrenome()); 
+    	academicos.remove(index);
     }
 
     public Pessoa consultar(DocumentoIdentificacao documento) {
+    	int index = 0;
+    	int cod = 0;
+    	for(int z = 0; z < academicos.size(); z++) {
+			if((academicos.get(z).getDocumento().getNumero()) == documento.getNumero() && (academicos.get(z).getDocumento().getTipo()) == documento.getTipo()) {
+				index = z;
+			}
+			
+		}
+    	cod = academicos.get(index).getSituacaoAcademica();
+    	SituacaoAcademica a = new SituacaoAcademica();
+    	
+    	JOptionPane.showMessageDialog(null, a.show1(cod)); 
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    	
     }
+    
+    
   
 }
