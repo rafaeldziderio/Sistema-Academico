@@ -84,5 +84,11 @@ public class SituacaoAcademica {
         System.out.println("Descr. Completa.: " + this.getSituacaoAcademica(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+    public String show1(int index) {
+        
+        return "------------------\nSituacao Acadêmica\n------------------\nCódigo..........: "+ this.getSituacaoAcademica(index).getCodigo()+ 
+		 "\nDescr. Abreviada: "+this.getSituacaoAcademica(index).getDescricaoAbreviada()+ "\nDescr. Completa.: "+this.getSituacaoAcademica(index).getDescricaoCompleta()+
+		 "\n------------------";
+    }
 }
 

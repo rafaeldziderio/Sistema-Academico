@@ -35,9 +35,10 @@ public class SistemaAcademico {
 
 
         		if(i==1) {
-        			Academico academico = new Academico();
+        			Academico academico = new Academico(academicos);
         			academico.cadastrar();
         			academicos.add(academico);
+        			
         		}
         		
 
@@ -78,6 +79,7 @@ public class SistemaAcademico {
         				academicos.get(index).consultar(DI);
         			}
         			if(i == 4) {
+        				//academicos.remove(index);
         				academicos.get(index).excluir(DI);
         			}
         		
