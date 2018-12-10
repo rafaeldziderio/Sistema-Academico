@@ -131,5 +131,5 @@ public abstract class Pessoa {
 	public abstract void cadastrar();
     public abstract void alterar(DocumentoIdentificacao documento);
     public abstract void excluir(DocumentoIdentificacao documento);
-    public abstract Pessoa consultar(DocumentoIdentificacao documento);
+    public abstract void consultar(DocumentoIdentificacao documento);
 }

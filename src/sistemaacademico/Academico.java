@@ -434,7 +434,7 @@ public class Academico extends Pessoa {
     	academicos.remove(index);
     }
 
-    public Pessoa consultar(DocumentoIdentificacao documento) {
+    public void consultar(DocumentoIdentificacao documento) {
     	int index = 0;
     	int cod = 0;
     	for(int z = 0; z < academicos.size(); z++) {
@@ -447,7 +447,7 @@ public class Academico extends Pessoa {
     	SituacaoAcademica a = new SituacaoAcademica();
     	
     	JOptionPane.showMessageDialog(null, a.show1(cod)); 
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     	
     }
     
