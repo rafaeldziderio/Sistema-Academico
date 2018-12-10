@@ -1,11 +1,12 @@
 package sistemaacademico;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import javax.swing.JOptionPane;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 
 
@@ -43,9 +44,11 @@ public class Academico extends Pessoa {
 		UnidadesFederativas UF = new UnidadesFederativas();
 		EstadosCivis EC = new EstadosCivis();
 		TiposDocumentos TD = new TiposDocumentos();
-		int escolha = 0, escolha1 = 0, escolha2 = 0, pp=0;
+		SituacaoAcademica SA = new SituacaoAcademica();
+		int escolha = 0, escolha1 = 0, escolha2 = 0, pp=0, escolha3=0;
 		long num = 0, matricula=0;
-		String com = "", org = "",prenome = "",sobrenome = "",paisNascimento = "", ufNascimento="", munNascimento="";
+		Date data1;
+		String com = "", org = "",prenome = "",sobrenome = "",paisNascimento = "", ufNascimento="", munNascimento="",data,prefixo="",sufixo="",prefixo1="",prefixo2="",sufixo1="",sufixo2="";
 		
 		boolean a = true;
 
@@ -352,36 +355,6 @@ public class Academico extends Pessoa {
 		while(a) {
 			int z = 0;
 
-			ufNascimento = JOptionPane.showInputDialog(null, "Digite o seu estado de nascimento: ");
-			for(int i = 0; i < ufNascimento.length(); i++)
-			{
-				char x = ufNascimento.charAt(i);
-				for(int j = 0; j < 10; j++)
-				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
-				}
-
-			}
-			if(z == 0)
-			{
-				break;
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Digite o seu estado de nascimento válido!");
-			}
-		}
-		JOptionPane.showMessageDialog(null,ufNascimento);
-		this.setUfNascimento(ufNascimento);
-		
-		while(a) {
-			int z = 0;
-
 			munNascimento = JOptionPane.showInputDialog(null, "Digite o seu município de nascimento: ");
 			for(int i = 0; i < munNascimento.length(); i++)
 			{
@@ -408,12 +381,40 @@ public class Academico extends Pessoa {
 		}
 		JOptionPane.showMessageDialog(null,munNascimento);
 		this.setMunicipioNascimento(munNascimento);
+		
+		while(a) {	
+			try {
+				escolha3 = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha a situação acadêmica a partir do código: \n" + SA.imprimirSA()));
+				if(escolha3<0 || escolha3>10) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		JOptionPane.showMessageDialog(null,(SA.getSituacaoAcademica(escolha3).getDescricaoCompleta()));
+		this.situacaoAcademica = escolha3;
+		
+		while(a) {
+			data = JOptionPane.showInputDialog(null, "Digite a sua data de nascimento(dd/MM/yyyy): ");
+			try {
+				data1 = new SimpleDateFormat("dd/MM/yyyy").parse(data);
+				JOptionPane.showMessageDialog(null,data1);
+				this.setDataNascimento(data1);
+				break;
+			} catch (ParseException e) {
+				JOptionPane.showMessageDialog(null,"Digite a data de maneira correta (dd/MM/yyyy) ");
+			}
+		}
+		
+		int ab = Integer.parseInt(JOptionPane.showInputDialog(null,"Deseja digitar o email pessoal:"));
+		
+	}
 	
-}
+	
 
-
-	
-	
 	public void alterar(DocumentoIdentificacao documento) {
     	JOptionPane.showMessageDialog(null, getPrenome());
     }

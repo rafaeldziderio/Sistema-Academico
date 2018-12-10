@@ -84,6 +84,15 @@ public class SituacaoAcademica {
         System.out.println("Descr. Completa.: " + this.getSituacaoAcademica(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+
+    public String imprimirSA() {
+    	String a = "";
+    	for(ElementoDescritivo EL: situacaoAcademica) {
+    		a = a + "Situacao Academica: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
+    
     public String show1(int index) {
         
         return "------------------\nSituacao Acadêmica\n------------------\nCódigo..........: "+ this.getSituacaoAcademica(index).getCodigo()+ 
