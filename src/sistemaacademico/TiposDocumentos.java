@@ -60,4 +60,11 @@ public class TiposDocumentos {
     public int size() {
         return(this.tiposDocumentos.size());
     }    
+    public String imprimirTD() {
+    	String a = "";
+    	for(ElementoDescritivo EL: tiposDocumentos) {
+    		a = a + "Tipo de Documento: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
 }

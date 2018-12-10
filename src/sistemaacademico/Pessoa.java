@@ -114,7 +114,7 @@ public abstract class Pessoa {
 		this.emailAlternativo = new Email(prefixo, sufixo);
 	}
 	
-	public abstract void cadastrar(long matricula, int situacaoAcademicoo, Pessoa pessoa);
+	public abstract void cadastrar();
     public abstract void alterar(DocumentoIdentificacao documento);
     public abstract void excluir(DocumentoIdentificacao documento);
     public abstract Pessoa consultar(DocumentoIdentificacao documento);

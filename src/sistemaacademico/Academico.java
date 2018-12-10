@@ -3,7 +3,6 @@ package sistemaacademico;
 public class Academico extends Pessoa {
     private long matricula;
     private int situacaoAcademica;
-    Pessoa pessoa;
     
     public long getMatricula() {
 		return matricula;
@@ -21,7 +20,7 @@ public class Academico extends Pessoa {
 		this.situacaoAcademica = situacaoAcademica;
 	}
 
-	public void cadastrar(long matricula, int situacaoAcademicoo, Pessoa pessoa) {
+	public void cadastrar() {
 		//UnidadesFederativas UF = new UnidadesFederativas();
 				//int escolha = 0;
 				//String nome = "";
@@ -90,6 +89,8 @@ public class Academico extends Pessoa {
     public void cancelarCurso(int curso) {}
     public void jubilarCurso(int curso) {}
     public void formarCurso(int curso) {}
+
+	
 
 }
    
