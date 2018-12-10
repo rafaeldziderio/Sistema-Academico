@@ -1,21 +1,30 @@
 package sistemaacademico;
 
+import java.util.Date;
+
 import javax.swing.JOptionPane;
 
 
 
 public class Academico extends Pessoa {
-    private long matricula;
+	
+	public Academico () {
+	
+	}
+    public Academico(DocumentoIdentificacao documento, String prenome, String sobrenome, Date dataNascimento,
+			long municipioNascimento, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco,
+			Telefone telefoneResidencial, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal,
+			Email emailComercial, Email emailAlternativo) {
+		super(documento, prenome, sobrenome, dataNascimento, municipioNascimento, ufNascimento, paisNascimento, estadoCivil,
+				endereco, telefoneResidencial, telefoneComercial, telefoneAlternativo, emailPessoal, emailComercial,
+				emailAlternativo);
+	
+	}
+
+	private long matricula;
     private int situacaoAcademica;
     
-    //public Academico(long matricula, int situacaoAcademica, DocumentoIdentificacao documento
-    //		, String prenome , String sobrenome, Date dataNascimento, long municipioNascimento
-    //		, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco, Telefone telefoneResidencial
-    //		, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal, Email emailComercial, Email emailAlternativo)
-    //{
-    //	this.matricula = matricula;
-    //	this.situacaoAcademica = situacaoAcademica;
-    //}
+    
     
     public long getMatricula() {
 		return matricula;

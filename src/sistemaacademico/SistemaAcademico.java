@@ -60,25 +60,25 @@ public class SistemaAcademico {
         				}
         			}
         			long N;
-        			int meupau=0;
+        			int index=0;
         			
         			N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Registro Geral: "));
         			for(int z = 0; z < academicos.size(); z++) {
         				if((academicos.get(z).getDocumento().getNumero()) == N && (academicos.get(z).getDocumento().getTipo()) == k) {
         					DI = academicos.get(z).getDocumento();
-        					meupau = z;
+        					index = z;
         				}
         			}
         			
         			
         			if(i == 2) {
-        				academicos.get(meupau).alterar(DI);
+        				academicos.get(index).alterar(DI);
         			}
         			if(i == 3) {
-        				academicos.get(meupau).consultar(DI);
+        				academicos.get(index).consultar(DI);
         			}
         			if(i == 4) {
-        				academicos.get(meupau).excluir(DI);
+        				academicos.get(index).excluir(DI);
         			}
         		
         		}

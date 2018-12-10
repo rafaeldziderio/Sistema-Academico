@@ -3,7 +3,11 @@ package sistemaacademico;
 import java.util.Date;
 
 public abstract class Pessoa {
-    DocumentoIdentificacao documento;              
+    DocumentoIdentificacao documento;  
+    
+    public Pessoa() {
+    	
+    }
     public Pessoa(DocumentoIdentificacao documento, String prenome, String sobrenome, Date dataNascimento,
 			long municipioNascimento, int ufNascimento, int paisNascimento, int estadoCivil, Endereco endereco,
 			Telefone telefoneResidencial, Telefone telefoneComercial, Telefone telefoneAlternativo, Email emailPessoal,
@@ -86,8 +90,8 @@ public abstract class Pessoa {
 	public void setEstadoCivil(int estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
-	public String getDocumento(){
-		return documento.toString();
+	public DocumentoIdentificacao getDocumento(){
+		return documento;
 	}
 	public void setDocumento(int tipo, long numero, String complemento, String orgaoExpedidor, int pais) {
 		this.documento = new DocumentoIdentificacao(tipo, numero, complemento, orgaoExpedidor, pais);
