@@ -172,24 +172,31 @@ public class Academico extends Pessoa {
 		}
 		JOptionPane.showMessageDialog(null,(TD.getTipoDocumento(escolha2).getDescricaoCompleta()));
 		
-		if(escolha2 == 2){
-			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
+		while(a) {
+			if(escolha2 == 0){
+				try {
+					num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o documento do tipo desconhecido:"));
+					break;
+				}catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(null,"Digite o número do documento:");
+				}
+			}
 		}
-		//if(escolha2 == 2){
-		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
-		//}
-		//if(escolha2 == 2){
-		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
-		//}
-		//if(escolha2 == 2){
-		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
-		//}
-		//if(escolha2 == 2){
-		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
-		//}
-		//if(escolha2 == 2){
-		//	num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite seu CPF Filho da puta:"));
-		//}
+		if(escolha2 == 1){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o seu Registro Geral(RG):"));
+		}
+		if(escolha2 == 2){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o seu CPF:"));
+		}
+		if(escolha2 == 3){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite a sua carteira profissional(CP):"));
+		}
+		if(escolha2 == 4){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o seu passaporte(PST):"));
+		}
+		if(escolha2 == 5){
+			num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o documento do tipo outro:"));
+		}
 		
 		com = JOptionPane.showInputDialog(null, "Digite, se existir, um complemento: ");
 		
@@ -199,12 +206,16 @@ public class Academico extends Pessoa {
 		
 		DocumentoIdentificacao arroz = new DocumentoIdentificacao(escolha2,num,com,org,pp);
 		
-		this.Academico(arroz,prenome,sobrenome);
     }
 	
 	
+	//private void Academico(DocumentoIdentificacao arroz, String prenome, String sobrenome) {
+	//	this.documento=arroz;
+	//	this.setPrenome(prenome);
+	//	this.setSobrenome(sobrenome);
+	//}
 	public void alterar(DocumentoIdentificacao documento) {
-    	
+    	JOptionPane.showMessageDialog(null, getPrenome());
     }
         
     
