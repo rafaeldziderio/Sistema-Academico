@@ -5,27 +5,8 @@ import java.util.Date;
 public abstract class Pessoa {
     DocumentoIdentificacao documento;  
     
-    public Pessoa() {
-    	
-    }
-    public Pessoa(DocumentoIdentificacao documento, String prenome, String sobrenome) 
-    {
-		this.documento = documento;
-		this.prenome = prenome;
-		this.sobrenome = sobrenome;
-		this.dataNascimento = dataNascimento;
-		this.municipioNascimento = municipioNascimento;
-		this.ufNascimento = ufNascimento;
-		this.paisNascimento = paisNascimento;
-		this.estadoCivil = estadoCivil;
-		this.endereco = endereco;
-		this.telefoneResidencial = telefoneResidencial;
-		this.telefoneComercial = telefoneComercial;
-		this.telefoneAlternativo = telefoneAlternativo;
-		this.emailPessoal = emailPessoal;
-		this.emailComercial = emailComercial;
-		this.emailAlternativo = emailAlternativo;
-	}
+   
+   
     
 	private String prenome;                // Exemplo: Maria Luiza
     private String sobrenome;              // da Silva Ferreira Prado
