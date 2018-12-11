@@ -38,7 +38,7 @@ public class SistemaAcademico {
         			}
         		}*/
         		
-        		i = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir. ", "Sistema Acadêmico", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option, option[0]);
+        		i = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir. ", "Sistema Acadêmico", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, option, option[0]);
 
 
         		if(i==0) {
@@ -51,11 +51,16 @@ public class SistemaAcademico {
 
         		if(i == 1 || i == 2 || i == 3) {
         			int k =0;
-        			TiposDocumentos TD = new TiposDocumentos();
-        			
+        			TiposDocumentos TD = new TiposDocumentos(); 
         			DocumentoIdentificacao DI = new DocumentoIdentificacao();
+        			
+        			String[] OP = new String[TD.getTiposDocumentos().size()];
+        			
+        			for(int t = 0; t <= 5; t++) {
+        				OP[t] = TD.getTipoDocumento(t).getDescricaoCompleta(); 
+        			}
 
-        			while(a) {
+        			/*while(a) {
         				try {
         					k = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre os documentos a seguir a partir do CODIGO: \n" + TD.imprimirTD()));
         					if(k<0 || k>5) {
@@ -66,7 +71,9 @@ public class SistemaAcademico {
         				}catch(NumberFormatException e) {
         					JOptionPane.showMessageDialog(null, "Digite um número pertencente ao intervalo:");
         				}
-        			}
+        			}*/
+        			k = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir. ", "Sistema Acadêmico", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, OP, OP[0]);
+        			
         			long N;
         			int index=0;
         			
@@ -91,11 +98,7 @@ public class SistemaAcademico {
         			}
         		
         		}
-
-        		
-
-        		j = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite 1 para terminar o programa e 0 para continuar"));
-
+        		j = JOptionPane.showConfirmDialog(null, "Deseja continuar?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         	}
         	while(j == 0);
         }

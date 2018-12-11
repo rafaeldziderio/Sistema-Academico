@@ -416,7 +416,7 @@ public class Academico extends Pessoa {
 	
 
 	public void alterar(DocumentoIdentificacao documento) {
-    	JOptionPane.showMessageDialog(null, getPrenome());
+    	JOptionPane.showMessageDialog(null, "TESTE");
     }
         
     
