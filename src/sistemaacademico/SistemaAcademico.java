@@ -86,13 +86,13 @@ public class SistemaAcademico {
         			}
         			
         			
-        			if(i == 2) {
+        			if(i == 1) {
         				academicos.get(index).alterar(DI);
         			}
-        			if(i == 3) {
+        			if(i == 2) {
         				academicos.get(index).consultar(DI);
         			}
-        			if(i == 4) {
+        			if(i == 3) {
         				//academicos.remove(index);
         				academicos.get(index).excluir(DI);
         			}
