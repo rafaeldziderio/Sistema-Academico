@@ -46,6 +46,7 @@ public class Academico extends Pessoa {
 		TiposDocumentos TD = new TiposDocumentos();
 		SituacaoAcademica SA = new SituacaoAcademica();
 		
+		
 		boolean a = true;
 		
 		
@@ -54,20 +55,18 @@ public class Academico extends Pessoa {
 			int z = 0;
 
 			prenome = JOptionPane.showInputDialog(null, "Digite seu primeiro nome: ");
+			prenome = prenome.toUpperCase();
 			for(int i = 0; i < prenome.length(); i++)
 			{
 				char x = prenome.charAt(i);
-				for(int j = 0; j < 10; j++)
+				switch (x)
 				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
+				case 'A': case 'B': case 'C': case 'D': case 'E': case 'F': case 'G': case 'H': case 'I': case 'J':
+				case 'K': case 'L': case 'M': case 'N': case 'O': case 'P': case 'Q': case 'R': case 'S': case 'T':
+				case 'U': case 'V': case 'W': case 'X': case 'Y': case 'Z': case ' ': z++;
 				}
 			}
-			if(z == 0)
+			if(z == prenome.length())
 			{
 				break;
 			}
@@ -84,20 +83,18 @@ public class Academico extends Pessoa {
 			int z = 0;
 
 			sobrenome = JOptionPane.showInputDialog(null, "Digite seu sobrenome: ");
+			sobrenome = sobrenome.toUpperCase();
 			for(int i = 0; i < sobrenome.length(); i++)
 			{
 				char x = sobrenome.charAt(i);
-				for(int j = 0; j < 10; j++)
+				switch (x)
 				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
+				case 'A': case 'B': case 'C': case 'D': case 'E': case 'F': case 'G': case 'H': case 'I': case 'J':
+				case 'K': case 'L': case 'M': case 'N': case 'O': case 'P': case 'Q': case 'R': case 'S': case 'T':
+				case 'U': case 'V': case 'W': case 'X': case 'Y': case 'Z': case ' ': z++;
 				}
 			}
-			if(z == 0)
+			if(z == sobrenome.length())
 			{
 				break;
 			}
