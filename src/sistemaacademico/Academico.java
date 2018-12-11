@@ -45,6 +45,7 @@ public class Academico extends Pessoa {
 		EstadosCivis EC = new EstadosCivis();
 		TiposDocumentos TD = new TiposDocumentos();
 		SituacaoAcademica SA = new SituacaoAcademica();
+		
 		boolean a = true;
 		
 		
@@ -437,6 +438,60 @@ public class Academico extends Pessoa {
 				JOptionPane.showMessageDialog(null,"Digite a data de maneira correta!");
 			}
 		}
+		
+		boolean verificar = false;
+		do{
+			int z = JOptionPane.showConfirmDialog(null, "Deseja inserir um email pessoal?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(z==0) {
+				String prefixo;
+				String sufixo;
+				
+				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+				setEmailPessoal(prefixo, sufixo);
+				
+				verificar = getEmail().validar(getEmail().Email1());
+				
+			}
+			else break;
+		}while(verificar==false);
+		
+			
+		boolean verificar2 = false;
+		do{
+			int y = JOptionPane.showConfirmDialog(null, "Deseja inserir um email alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(y==0) {
+				String prefixo;
+				String sufixo;
+				
+				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+				setEmailPessoal(prefixo, sufixo);
+				
+				verificar2 = getEmail().validar(getEmail().Email1());
+				
+			}
+			else break;
+		}while(verificar2==false);
+		
+		boolean verificar3 = false;
+		do{
+			int x = JOptionPane.showConfirmDialog(null, "Deseja inserir um email comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(x==0) {
+				String prefixo;
+				String sufixo;
+				
+				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+				setEmailPessoal(prefixo, sufixo);
+				
+				verificar3 = getEmail().validar(getEmail().Email1());
+				
+			}
+			else break;
+		}while(verificar3==false);
+		
+		
 		
 		
 		

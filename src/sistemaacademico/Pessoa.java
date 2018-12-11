@@ -112,6 +112,9 @@ public abstract class Pessoa {
 	public String getEmailPessoal() {
 		return emailPessoal.toString();
 	}
+	public Email getEmail() {
+		return emailPessoal;
+	}
 	public void setEmailPessoal(String prefixo, String sufixo) {
 		this.emailPessoal = new Email(prefixo, sufixo);
 	}
