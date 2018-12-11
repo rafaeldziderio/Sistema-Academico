@@ -460,27 +460,29 @@ public class Academico extends Pessoa {
 			
 		}
     	
-    	JOptionPane.showMessageDialog(null, "Usuário excluído: "+academicos.get(index).getPrenome()); 
+    	JOptionPane.showMessageDialog(null, "Usuário excluído: "+academicos.get(index).getPrenome()+" "+academicos.get(index).getSobrenome()+"\nMatrícula: "+academicos.get(index).getMatricula()); 
     	academicos.remove(index);
     }
 
     public void consultar(DocumentoIdentificacao documento) {
-    	int index = 0;
+    	int index = -1;
     	int cod = 0;
     	for(int z = 0; z < academicos.size(); z++) {
 			if((academicos.get(z).getDocumento().getNumero()) == documento.getNumero() && (academicos.get(z).getDocumento().getTipo()) == documento.getTipo()) {
 				index = z;
 			}
-			
 		}
-    	cod = academicos.get(index).getSituacaoAcademica();
-    	SituacaoAcademica a = new SituacaoAcademica();
     	
-    	JOptionPane.showMessageDialog(null, a.show1(cod)); 
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    		cod = academicos.get(index).getSituacaoAcademica();
+        	SituacaoAcademica a = new SituacaoAcademica();
+        	
+        	JOptionPane.showMessageDialog(null, a.show1(cod)); 
     	
     }
     
     
-  
+    	
 }
+    
+    
+  

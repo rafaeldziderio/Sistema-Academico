@@ -75,7 +75,7 @@ public class SistemaAcademico {
         			k = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir. ", "Sistema Acadêmico", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, OP, OP[0]);
         			
         			long N;
-        			int index=0;
+        			int index=-1;
         			
         			N = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o número do documento do tipo Registro Geral: "));
         			for(int z = 0; z < academicos.size(); z++) {
@@ -90,7 +90,10 @@ public class SistemaAcademico {
         				academicos.get(index).alterar(DI);
         			}
         			if(i == 2) {
+        				if(index != -1)
         				academicos.get(index).consultar(DI);
+        				else
+        					JOptionPane.showMessageDialog(null,"Usuário não cadastrado ou excluído!");
         			}
         			if(i == 3) {
         				//academicos.remove(index);
