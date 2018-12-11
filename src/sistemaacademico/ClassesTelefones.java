@@ -25,19 +25,19 @@ public class ClassesTelefones {
         classesTelefones.add(elementoDescritivo); 
         
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(1, "RG", "Registro Geral");
+        elementoDescritivo.setElementoDescritivo(1, "COM", "Comercial");
         classesTelefones.add(elementoDescritivo); 
         
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(2, "CPF", "CPF/MF");
+        elementoDescritivo.setElementoDescritivo(2, "RES", "Residencial");
         classesTelefones.add(elementoDescritivo); 
         
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(3, "CP", "Carteira Profissional");
+        elementoDescritivo.setElementoDescritivo(3, "REC", " Alternativo / Recado");
         classesTelefones.add(elementoDescritivo); 
         
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(4, "PST", "Passaporte");
+        elementoDescritivo.setElementoDescritivo(4, "OUT", "Outro");
         classesTelefones.add(elementoDescritivo); 
         
     }

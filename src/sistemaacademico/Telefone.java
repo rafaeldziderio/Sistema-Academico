@@ -13,10 +13,10 @@ public class Telefone {
     int classe;
     int ddi;
     int ddd;
-    int numero;
+    long numero;
     int ramal;
 	
-    public Telefone(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+    public Telefone(int tipo, int classe, int ddi, int ddd, long numero, int ramal) {
 		this.tipo = tipo;
 		this.classe = classe;
 		this.ddi = ddi;
@@ -26,7 +26,7 @@ public class Telefone {
     }
 	
 	public String toString() {
-		return ("Tipo: " + tipo + ";\nClasse: " + classe + ";\nDDI: " + ddi + ";\nDDD: " + ddd + ";\nNumero: "
+		return ("Tipo: " + tipo + ";\nClasse: " + classe + ";\nDDI: +" + ddi + ";\nDDD: (" + ddd + ");\nNumero: "
 				+ numero + "Ramal : " + ramal);
 	}
     

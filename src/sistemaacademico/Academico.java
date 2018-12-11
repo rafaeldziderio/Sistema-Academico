@@ -45,7 +45,8 @@ public class Academico extends Pessoa {
 		EstadosCivis EC = new EstadosCivis();
 		TiposDocumentos TD = new TiposDocumentos();
 		SituacaoAcademica SA = new SituacaoAcademica();
-		
+		TiposTelefones Tele = new TiposTelefones();
+		ClassesTelefones TelCL = new ClassesTelefones();
 		
 		boolean a = true;
 		
@@ -111,8 +112,13 @@ public class Academico extends Pessoa {
 		long matricula=0;
 		while(a) {
 			try {
-				matricula =Long.parseLong(JOptionPane.showInputDialog(null, "Digite sua matrícula: "));
-				break;
+				matricula = Long.parseLong(JOptionPane.showInputDialog(null, "Digite sua matrícula: ", "000000000"));
+				if(Long.toString(matricula).length() != 9)
+				{
+					JOptionPane.showMessageDialog(null, "Digite uma matrícula válida com 9 dígitos.");
+				}
+				else
+					break;
 
 			}catch(NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Digite uma matrícula válida!");
@@ -266,7 +272,6 @@ public class Academico extends Pessoa {
 				{
 					JOptionPane.showMessageDialog(null, "Digite um complemento válido!");
 				}
-
 			}
 		}	
 		
@@ -490,10 +495,113 @@ public class Academico extends Pessoa {
 			else break;
 		}while(verificar3==false);
 		
+		String[] option2 = new String[Tele.getTiposTelefones().size()];
+		for(int i = 0; i < 5; i++)
+		{
+			option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
+		}
+		
+		int tipo = 0;
+		tipo = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
 		
 		
+		String[] option3 = new String[TelCL.getClassesTelefones().size()];
+		for(int i = 0; i < 5; i++)
+		{
+			option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
+		}
 		
+		int classe = 0;
+		classe = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
 		
+		int ddi = 0;
+		while (a)
+		{
+			try
+			{
+				ddi = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+				if(ddi <= 0 || ddi > 9999)
+				{
+					JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
+				}
+				else
+				{
+					break;
+				}
+			}catch(NumberFormatException e)
+			{
+				JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+			}
+		}
+		
+		int ddd = 0;
+		while(a)
+		{
+			try
+			{
+				ddd = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+				if(ddd < 1 || ddd > 1000)
+				{
+					JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
+				}
+				else
+				{
+					break;
+				}
+			}catch(NumberFormatException e)
+			{
+				JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+			}
+		}
+		
+		long numero = 0;
+		while(a)
+		{
+			try
+			{
+				numero = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone"));
+				if(Long.toString(numero).length() != 8 && Long.toString(numero).length() != 9 )
+				{
+					JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+				}
+				else
+				{
+					break;
+				}
+			}catch(NumberFormatException e)
+			{
+				JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+			}
+		}
+		
+		int ramal = 0;
+		int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
+				"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		
+		if(k == 0) 
+		{
+			while(a) 
+			{
+				try
+				{
+					ramal = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+					if(ramal <= 0 || ramal > 9999)
+					{
+						JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
+					}
+					else
+						break;
+				}catch(NumberFormatException e)
+				{
+					JOptionPane.showMessageDialog(null, "Digite apenas números.");
+				}
+				
+			}
+		}
+		
+		//this.setTelefoneResidencial(tipo, classe, ddi, ddd, numero, ramal);
 	}
 	
 	

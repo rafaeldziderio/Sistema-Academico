@@ -100,13 +100,13 @@ public abstract class Pessoa {
 	public String getTelefoneAlternativo() {
 		return telefoneAlternativo.toString();
 	}
-	public void setTelefoneResidencial(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+	public void setTelefoneResidencial(int tipo, int classe, int ddi, int ddd, long numero, int ramal) {
 		this.telefoneResidencial = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
 	}
-	public void setTelefoneComercial(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+	public void setTelefoneComercial(int tipo, int classe, int ddi, int ddd, long numero, int ramal) {
 		this.telefoneComercial = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
 	}
-	public void setTelefoneAlternativo(int tipo, int classe, int ddi, int ddd, int numero, int ramal) {
+	public void setTelefoneAlternativo(int tipo, int classe, int ddi, int ddd, long numero, int ramal) {
 		this.telefoneAlternativo = new Telefone(tipo, classe, ddi, ddd, numero, ramal);
 	}
 	public String getEmailPessoal() {
