@@ -47,6 +47,8 @@ public class Academico extends Pessoa {
 		SituacaoAcademica SA = new SituacaoAcademica();
 		TiposTelefones Tele = new TiposTelefones();
 		ClassesTelefones TelCL = new ClassesTelefones();
+		TiposLogradouros tipo = new TiposLogradouros();
+		Municipios municipio = new Municipios();
 		
 		boolean a = true;
 		
@@ -494,15 +496,15 @@ public class Academico extends Pessoa {
 			}
 			else break;
 		}while(verificar3==false);
-		
+		/*
 		String[] option2 = new String[Tele.getTiposTelefones().size()];
 		for(int i = 0; i < 5; i++)
 		{
 			option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
 		}
 		
-		int tipo = 0;
-		tipo = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+		int tipo1 = 0;
+		tipo1 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 				JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
 		
 		
@@ -556,13 +558,13 @@ public class Academico extends Pessoa {
 			}
 		}
 		
-		long numero = 0;
+		long numero1 = 0;
 		while(a)
 		{
 			try
 			{
-				numero = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone"));
-				if(Long.toString(numero).length() != 8 && Long.toString(numero).length() != 9 )
+				numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone"));
+				if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
 				{
 					JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
 				}
@@ -601,7 +603,112 @@ public class Academico extends Pessoa {
 			}
 		}
 		
-		//this.setTelefoneResidencial(tipo, classe, ddi, ddd, numero, ramal);
+		//this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
+		*/
+		int tipoL=0;
+		while(a) {	
+			try {
+				tipoL = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o tipo de logradouro: \n" + tipo.imprimirLogradouro()));
+				if(tipoL<0 || tipoL>30) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		int cep = 0;
+		while(a) {
+			try {
+				cep = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o CEP:"));
+				break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o CEP:");
+			}
+		}
+		String desc ="";
+		while(a) {
+			try {
+				desc = JOptionPane.showInputDialog(null, "Digite a descrição do endereço:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite a descrição do endereço:");
+			}
+		}
+		String complemento="";
+		while(a) {
+			try {
+				complemento = JOptionPane.showInputDialog(null, "Digite o complemento do endereço:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite o complemento do endereço:");
+			}
+		}
+		int numero = 0;
+		while(a) {
+			try {
+				numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número da residencia:"));
+				break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o número da residencia:");
+			}
+		}
+		String quadra="";
+		while(a) {
+			try {
+				quadra = JOptionPane.showInputDialog(null, "Digite a quadra do endereço:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite a quadro do endereço:");
+			}
+		}
+		String lote="";
+		while(a) {
+			try {
+				lote = JOptionPane.showInputDialog(null, "Digite o lote do endereço:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite o lote do endereço:");
+			}
+		}
+		String bairro="";
+		while(a) {
+			try {
+				bairro = JOptionPane.showInputDialog(null, "Digite o bairro do endereço:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite o bairro do endereço:");
+			}
+		}
+		long codMunicipio=0;
+		while(a) {	
+			try {
+				codMunicipio = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o código de seu município: \n" + municipio.imprimirM()));
+				break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		String pais="";
+		while(a) {
+			try {
+				pais = JOptionPane.showInputDialog(null, "Digite seu país atual:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Digite seu país atual:");
+			}
+		}
+		String referencia ="";
+		while(a) {
+			try {
+				referencia = JOptionPane.showInputDialog(null, "Informe uma referência:");
+				break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null, "Informe uma referência:");
+			}
+		}
+		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
 	}
 	
 	
@@ -638,7 +745,25 @@ public class Academico extends Pessoa {
     		cod = academicos.get(index).getSituacaoAcademica();
         	SituacaoAcademica a = new SituacaoAcademica();
         	
-        	JOptionPane.showMessageDialog(null, a.show1(cod)); 
+        	JOptionPane.showMessageDialog(null, a.show1(cod)
+        			+"\n Nome Completo: "+academicos.get(index).getPrenome()+" "+academicos.get(index).getSobrenome()
+        			+"\n Número da Matrícula: "+academicos.get(index).getMatricula()
+        			+"\n"+academicos.get(index).getEmailPessoal()
+        			+"\n"+academicos.get(index).getEmailComercial()
+        			+"\n"+academicos.get(index).getEmailAlternativo()
+        			+"\n Telefone Residencial: "+academicos.get(index).getTelefoneResidencial()
+        			+"\n Telefone Comercial: "+academicos.get(index).getTelefoneComercial()
+        			+"\n Telefone Alternativo: "+academicos.get(index).getTelefoneAlternativo()
+        			+"\n\n DOCUMENTO DE IDENTIFICAÇÃO: "
+        			+"\n Tipo: "+academicos.get(index).getDocumento().getTipo()
+        			+"\n Número: "+academicos.get(index).getDocumento().getNumero()
+        			+"\n Orgão Expeditor: "+academicos.get(index).getDocumento().getOrgaoExpedidor()
+        			+"\n País: "+academicos.get(index).getDocumento().getPais()
+        			+"\n Complemento: "+academicos.get(index).getDocumento().getComplemento()
+        			+"\n\n Endereço: "
+        			+"\n "+academicos.get(index).getEndereco()
+        			
+        			); 
     	
     }
     

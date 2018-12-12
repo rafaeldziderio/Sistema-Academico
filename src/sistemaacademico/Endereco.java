@@ -1,4 +1,3 @@
-
 package sistemaacademico;
 
 public class Endereco {
@@ -12,11 +11,14 @@ public class Endereco {
     String bairro;
     long municipio;
     int unidadeFederacao;
-    int pais;
+    String pais;
     String referencia;
+    String  tipoL;
+    String m;
+    String estado;
     
 	public Endereco(int tipoLogradouro, int codigoLogradouro, String descricaoLogradouro, String complementoLogradouro,
-			int numero, String quadra, String lote, String bairro, long municipio, int unidadeFederacao, int pais,
+			int numero, String quadra, String lote, String bairro, long municipio, int unidadeFederacao, String pais,
 			String referencia) {
 		this.tipoLogradouro = tipoLogradouro;
 		this.codigoLogradouro = codigoLogradouro;
@@ -30,16 +32,19 @@ public class Endereco {
 		this.unidadeFederacao = unidadeFederacao;
 		this.pais = pais;
 		this.referencia = referencia;
+		TiposLogradouros tipo = new TiposLogradouros();
+		Municipios municipioO = new Municipios();
+		tipoL = tipo.tipo(tipoLogradouro);
+		m = municipioO.muni(municipio);
+		UnidadesFederativas UF = new UnidadesFederativas();
+		estado = UF.estado(unidadeFederacao);
 	}
 	
+	
 	public String toString() {
-		return ("Tipo logradouro: " + tipoLogradouro + ";\nCEP: " + codigoLogradouro + ";\nDescrição do logradouro: " + descricaoLogradouro
-				+ ";\nComplemento: " + complementoLogradouro + ";\nNumero: " + numero + ";\nQuadra: " + quadra + ";\nLote" + lote 
-				+ ";\nBairro: " + bairro + ";\nMunicípio: " + municipio + ";\nUF: " + unidadeFederacao + ";\nPais: " + pais
+		return ("Tipo logradouro: " + tipoL + ";\nCEP: " + codigoLogradouro + ";\nDescrição do logradouro: " + descricaoLogradouro
+				+ ";\nComplemento: " + complementoLogradouro + ";\nNumero: " + numero + ";\nQuadra: " + quadra + ";\nLote: " + lote 
+				+ ";\nBairro: " + bairro + ";\nMunicípio: " + m + ";\nUF: " + estado + ";\nPais: " + pais
 				+ ";\nReferencia: " + referencia);
 	}
-    
-    
 }
-
-

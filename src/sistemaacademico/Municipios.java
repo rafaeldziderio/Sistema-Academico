@@ -57,4 +57,22 @@ public class Municipios {
         System.out.println("Descr. Completa.: " + this.getMunicipios(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+    
+    public String muni(long k) {
+    	String a = "";
+    	for(int i=0;i<size();i++) {
+    		if(k==municipios.get(i).getCodigo()) {
+    			a = municipios.get(i).getDescricaoCompleta();
+    		}
+    	}
+    	return a;
+    }
+    
+    public String imprimirM() {
+    	String a = "";
+    	for(ElementoDescritivo EL: municipios) {
+    		a = a + "Municípios: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
 }

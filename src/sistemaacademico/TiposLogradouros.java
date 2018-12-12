@@ -144,4 +144,18 @@ public class TiposLogradouros {
         System.out.println("Descr. Completa.: " + this.getTiposLogradouros(index).getDescricaoCompleta());
         System.out.println("------------------");
     }
+    
+    public String tipo(int k) {
+    	String a = "";
+    	a = tiposLogradouros.get(k).getDescricaoCompleta();
+    	return a;
+    }
+    
+    public String imprimirLogradouro() {
+    	String a = "";
+    	for(ElementoDescritivo EL: tiposLogradouros) {
+    		a = a + "Tipos Logradouros: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
 }

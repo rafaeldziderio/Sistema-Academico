@@ -140,4 +140,9 @@ public class  UnidadesFederativas {
     	return a;
     }
     
+    public String estado(int k) {
+    	String a = "";
+    	a = ufs.get(k).getDescricaoCompleta();
+    	return a;
+    }
 }

@@ -86,7 +86,7 @@ public abstract class Pessoa {
 		return endereco.toString();
 	}
 	public void setEndereco(int tipoLogradouro, int codigoLogradouro, String descricaoLogradouro, String complementoLogradouro,
-			int numero, String quadra, String lote, String bairro, long municipio, int unidadeFederacao, int pais,
+			int numero, String quadra, String lote, String bairro, long municipio, int unidadeFederacao, String pais,
 			String referencia) {
 		this.endereco = new Endereco(tipoLogradouro, codigoLogradouro, descricaoLogradouro, complementoLogradouro, numero, 
 				quadra, lote, bairro, municipio, unidadeFederacao, pais, referencia);
