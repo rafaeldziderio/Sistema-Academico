@@ -448,9 +448,10 @@ public class Academico extends Pessoa {
 		boolean verificar = false;
 		do{
 			int z = JOptionPane.showConfirmDialog(null, "Deseja inserir um email pessoal?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			String prefixo = "";
+			String sufixo ="";
 			if(z==0) {
-				String prefixo;
-				String sufixo;
+				
 				
 				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
 				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
@@ -459,44 +460,54 @@ public class Academico extends Pessoa {
 				verificar = getEmail().validar(getEmail().Email1());
 				
 			}
-			else break;
+			else {
+				setEmailPessoal(prefixo, sufixo); 
+				break;
+				}
 		}while(verificar==false);
 		
 			
 		boolean verificar2 = false;
 		do{
 			int y = JOptionPane.showConfirmDialog(null, "Deseja inserir um email alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			String prefixo = "";
+			String sufixo ="";
 			if(y==0) {
-				String prefixo;
-				String sufixo;
+				
 				
 				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
 				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
-				setEmailPessoal(prefixo, sufixo);
+				setEmailAlternativo(prefixo, sufixo);
 				
 				verificar2 = getEmail().validar(getEmail().Email1());
 				
 			}
-			else break;
+			else {
+				setEmailAlternativo(prefixo, sufixo); 
+				break;
+				}
 		}while(verificar2==false);
 		
 		boolean verificar3 = false;
 		do{
 			int x = JOptionPane.showConfirmDialog(null, "Deseja inserir um email comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			String prefixo = "";
+			String sufixo = "";
 			if(x==0) {
-				String prefixo;
-				String sufixo;
+				
 				
 				prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
 				sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
-				setEmailPessoal(prefixo, sufixo);
+				setEmailComercial(prefixo, sufixo);
 				
 				verificar3 = getEmail().validar(getEmail().Email1());
 				
 			}
-			else break;
+			else {
+				setEmailComercial(prefixo, sufixo); 
+				break;
+				}
 		}while(verificar3==false);
-		/*
 		String[] option2 = new String[Tele.getTiposTelefones().size()];
 		for(int i = 0; i < 5; i++)
 		{
@@ -559,22 +570,76 @@ public class Academico extends Pessoa {
 		}
 		
 		long numero1 = 0;
+		int i = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone residencial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if(i==0){
+			while(a)
+			{
+				
+					try
+					{
+						numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+						if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
+						{
+							JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+			}
+		
+		long numero2 = 0;
+		
+		int b = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if(b==0){
 		while(a)
 		{
-			try
-			{
-				numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone"));
-				if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
+				
+				try
 				{
-					JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
-				}
-				else
+					numero2 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone comercial"));
+					if(Long.toString(numero2).length() != 8 && Long.toString(numero2).length() != 9 )
+					{
+						JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+					}
+					else
+					{
+						break;
+					}
+				}catch(NumberFormatException e)
 				{
-					break;
+					JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
 				}
-			}catch(NumberFormatException e)
-			{
-				JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+			}
+		}
+		
+		long numero3 = 0;
+		
+		int c = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+		if(c==0){
+		while(a)
+		{
+			
+				try
+				{
+					numero3 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone alternativo"));
+					if(Long.toString(numero3).length() != 8 && Long.toString(numero3).length() != 9 )
+					{
+						JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+					}
+					else
+					{
+						break;
+					}
+				}catch(NumberFormatException e)
+				{
+					JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+				}
 			}
 		}
 		
@@ -603,9 +668,11 @@ public class Academico extends Pessoa {
 			}
 		}
 		
-		//this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
-		*/
-		int tipoL=0;
+		this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
+		this.setTelefoneComercial(tipo1, classe, ddi, ddd, numero2, ramal);
+		this.setTelefoneAlternativo(tipo1, classe, ddi, ddd, numero3, ramal);
+
+		/*int tipoL=0;
 		while(a) {	
 			try {
 				tipoL = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o tipo de logradouro: \n" + tipo.imprimirLogradouro()));
@@ -709,12 +776,28 @@ public class Academico extends Pessoa {
 			}
 		}
 		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
+	*/
 	}
 	
 	
 
 	public void alterar(DocumentoIdentificacao documento) {
     	JOptionPane.showMessageDialog(null, "TESTE");
+    	boolean a = true;
+    	int opcao = 0;
+		while(a) {	
+			try {
+				opcao = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o dado pessoal que deseja alterar: \n"
+						+ "1 - Email/n2- Estado Civil\n3- Situação Acadêmica\n4- Telefone\n5-Logradouro" ));
+				if(opcao<0 || opcao>27) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
     }
         
     
@@ -746,22 +829,22 @@ public class Academico extends Pessoa {
         	SituacaoAcademica a = new SituacaoAcademica();
         	
         	JOptionPane.showMessageDialog(null, a.show1(cod)
-        			+"\n Nome Completo: "+academicos.get(index).getPrenome()+" "+academicos.get(index).getSobrenome()
-        			+"\n Número da Matrícula: "+academicos.get(index).getMatricula()
-        			+"\n"+academicos.get(index).getEmailPessoal()
+        			+"\n\n Nome Completo: "+academicos.get(index).getPrenome()+" "+academicos.get(index).getSobrenome()
+        			+";\n\n Número da Matrícula: "+academicos.get(index).getMatricula()
+        			+";\n\n"+academicos.get(index).getEmailPessoal()
         			+"\n"+academicos.get(index).getEmailComercial()
         			+"\n"+academicos.get(index).getEmailAlternativo()
-        			+"\n Telefone Residencial: "+academicos.get(index).getTelefoneResidencial()
+        			+"\n\n Telefone Residencial: "+academicos.get(index).getTelefoneResidencial()
         			+"\n Telefone Comercial: "+academicos.get(index).getTelefoneComercial()
         			+"\n Telefone Alternativo: "+academicos.get(index).getTelefoneAlternativo()
         			+"\n\n DOCUMENTO DE IDENTIFICAÇÃO: "
         			+"\n Tipo: "+academicos.get(index).getDocumento().getTipo()
-        			+"\n Número: "+academicos.get(index).getDocumento().getNumero()
+        			+"\n Número: "+academicos.get(index).getDocumento( ).getNumero()
         			+"\n Orgão Expeditor: "+academicos.get(index).getDocumento().getOrgaoExpedidor()
         			+"\n País: "+academicos.get(index).getDocumento().getPais()
         			+"\n Complemento: "+academicos.get(index).getDocumento().getComplemento()
         			+"\n\n Endereço: "
-        			+"\n "+academicos.get(index).getEndereco()
+        		//	+"\n "+academicos.get(index).getEndereco()
         			
         			); 
     	
@@ -770,6 +853,10 @@ public class Academico extends Pessoa {
     
     	
 }
+    
+    
+  
+
     
     
   
