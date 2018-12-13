@@ -178,6 +178,7 @@ public class Academico extends Pessoa {
 		
 		
 		long num = 0;
+		String num1 = "";
 		if(tipoD == 0){
 			while(a) {
 				try {
@@ -202,12 +203,12 @@ public class Academico extends Pessoa {
 
 		if(tipoD == 2){
 			while(a) {
-				try {
-					num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o seu CPF:"));
-					break;
-				}catch(NumberFormatException e) {
-					JOptionPane.showMessageDialog(null, "Digite o número do CPF:");
-				}
+				num1 =JOptionPane.showInputDialog(null, "Digite o seu CPF:");
+					if(ValidaCpf.isCPF(num1) == true)
+						break;
+					else
+						JOptionPane.showMessageDialog(null,"Digite um CPF válido");
+				
 			}
 		}
 
