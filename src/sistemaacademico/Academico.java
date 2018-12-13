@@ -249,30 +249,11 @@ public class Academico extends Pessoa {
 		int w = JOptionPane.showConfirmDialog(null, "Você quer digitar um complemento do número?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if(w==0) {
 			while(a) {
-
-				int z = 0;
-
-				compl = JOptionPane.showInputDialog(null, "Digite o complemento: ");
-				for(int i = 0; i < compl.length(); i++)
-				{
-					char x = compl.charAt(i);
-					for(int j = 0; j < 10; j++)
-					{
-						String string1 = Character.toString(x);
-						String string2 = Integer.toString(j);
-						if( string1.equals(string2) )
-						{
-							z++;
-						}
-					}
-				}
-				if(z == 0)
-				{
-					break;
-				}
-				else
-				{
-					JOptionPane.showMessageDialog(null, "Digite um complemento válido!");
+				try {
+				compl = JOptionPane.showInputDialog(null,"Insira um complemento do documento:");
+				break;
+				}catch(IllegalArgumentException e) {
+					JOptionPane.showMessageDialog(null,"Insira um complemento válido!");
 				}
 			}
 		}	
@@ -307,32 +288,14 @@ public class Academico extends Pessoa {
 		DocumentoIdentificacao doc = new DocumentoIdentificacao(tipoD,num,orgao,compl,paisD);
 		this.documento = doc;
 		
-		/*
+		
 		String paisNascimento = "";
 		while(a) {
-			int z = 0;
-
-			paisNascimento = JOptionPane.showInputDialog(null, "Digite o país de nascimento: ");
-			for(int i = 0; i < paisNascimento.length(); i++)
-			{
-				char x = paisNascimento.charAt(i);
-				for(int j = 0; j < 10; j++)
-				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
-				}
-			}
-			if(z == 0)
-			{
-				break;
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Digite o seu país de nascimento válido!");
+			try {
+			paisNascimento = JOptionPane.showInputDialog(null,"Digite o seu país de nascimento:");
+			break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null,"Digite um país válido!");
 			}
 		}
 		this.setPaisNascimento(paisNascimento);
@@ -340,29 +303,11 @@ public class Academico extends Pessoa {
 		
 		String ufNascimento="";
 		while(a) {
-			int z = 0;
-
-			ufNascimento = JOptionPane.showInputDialog(null, "Digite o seu estado de nascimento: ");
-			for(int i = 0; i < ufNascimento.length(); i++)
-			{
-				char x = ufNascimento.charAt(i);
-				for(int j = 0; j < 10; j++)
-				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
-				}
-			}
-			if(z == 0)
-			{
-				break;
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Digite o seu estado de nascimento válido!");
+			try {
+			ufNascimento = JOptionPane.showInputDialog(null, "Digite o seu estado de nascimento:" );
+			break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null,"Digite um estado válido!");
 			}
 		}
 		this.setPaisNascimento(ufNascimento);
@@ -370,29 +315,11 @@ public class Academico extends Pessoa {
 		
 		String munNascimento="";
 		while(a) {
-			int z = 0;
-
-			munNascimento = JOptionPane.showInputDialog(null, "Digite o seu município de nascimento: ");
-			for(int i = 0; i < munNascimento.length(); i++)
-			{
-				char x = munNascimento.charAt(i);
-				for(int j = 0; j < 10; j++)
-				{
-					String string1 = Character.toString(x);
-					String string2 = Integer.toString(j);
-					if( string1.equals(string2) )
-					{
-						z++;
-					}
-				}
-			}
-			if(z == 0)
-			{
-				break;
-			}
-			else
-			{
-				JOptionPane.showMessageDialog(null, "Digite o seu município de nascimento válido!");
+			try {
+			munNascimento = JOptionPane.showInputDialog(null,"Digite o seu município de nascimento:");
+			break;
+			}catch(IllegalArgumentException e) {
+				JOptionPane.showMessageDialog(null,"Insira um município válido!");
 			}
 		}
 		this.setMunicipioNascimento(munNascimento);
@@ -938,8 +865,6 @@ public class Academico extends Pessoa {
 		}
 		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
 		
-		
-		*/
 	}
 	
 	
