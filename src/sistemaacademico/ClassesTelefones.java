@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class ClassesTelefones {
     private ArrayList <ElementoDescritivo>      classesTelefones;
     /**
-     * Implementar de maneira semelhante Ã  UnidadesFederativas.
+     * Implementar de maneira semelhante à UnidadesFederativas.
      * 
-     * CÃ³d.  DescriÃ§Ã£o Completa                Descr. Abreviada
+     * Cód.  Descrição Completa                Descr. Abreviada
      *  00 - Desconhecida 			DS
         01 - Comercial                          COM
         02 - Residencial			RES
@@ -72,6 +72,15 @@ public class ClassesTelefones {
     	String a = "";
     	for(ElementoDescritivo EL: classesTelefones) {
     		a = a + "Classes de Telefones: " + EL.getCodigo() + " - " + EL.getDescricaoCompleta() + "\n";
+    	}
+    	return a;
+    }
+    public String classe(int k) {
+    	String a = "";
+    	for(int i=0;i<size();i++) {
+    		if(k==classesTelefones.get(i).getCodigo()) {
+    			a = classesTelefones.get(i).getDescricaoCompleta();
+    		}
     	}
     	return a;
     }

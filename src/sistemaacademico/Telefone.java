@@ -5,20 +5,22 @@ package sistemaacademico;
  */
 /*
 * Nome.......: Telefone
-* Objetivo...: Representar um nÃºmero de telefone qualquer.
+* Objetivo...: Representar um número de telefone qualquer.
 * Observacoes:
 */
 public class Telefone {
-    int tipo;
-    int classe;
+    String tipo;
+    String classe;
     int ddi;
     int ddd;
     long numero;
     int ramal;
 	
     public Telefone(int tipo, int classe, int ddi, int ddd, long numero, int ramal) {
-		this.tipo = tipo;
-		this.classe = classe;
+    	TiposTelefones t = new TiposTelefones();
+    	ClassesTelefones c = new ClassesTelefones();
+		this.tipo = t.tipoT(tipo);
+		this.classe = c.classe(classe);
 		this.ddi = ddi;
 		this.ddd = ddd;
 		this.numero = numero;
@@ -27,7 +29,7 @@ public class Telefone {
 	
 	public String toString() {
 		return ("Tipo: " + tipo + ";\nClasse: " + classe + ";\nDDI: +" + ddi + ";\nDDD: (" + ddd + ");\nNumero: "
-				+ numero + "Ramal : " + ramal);
+				+ numero + "\nRamal : " + ramal);
 	}
     
 }

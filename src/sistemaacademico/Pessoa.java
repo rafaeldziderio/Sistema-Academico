@@ -4,7 +4,8 @@ import java.util.Date;
 
 public abstract class Pessoa {
     DocumentoIdentificacao documento;  
-    
+    TiposLogradouros tipo = new TiposLogradouros();
+	Municipios municipioO = new Municipios();
    
    
     
@@ -130,9 +131,159 @@ public abstract class Pessoa {
 	public void setEmailAlternativo(String prefixo, String sufixo) {
 		this.emailAlternativo = new Email(prefixo, sufixo);
 	}
+	public int getTipoLogradouro() {
+		return endereco.getTipoLogradouro();
+	}
+
+
+	public void setTipoLogradouro(int tipoLogradouro) {
+		endereco.setTipoLogradouro(tipoLogradouro);
+	}
+
+
+	public int getCodigoLogradouro() {
+		return endereco.getCodigoLogradouro();
+	}
+
+
+	public void setCodigoLogradouro(int codigoLogradouro) {
+		endereco.setCodigoLogradouro(codigoLogradouro);
+	}
+
+
+	public String getDescricaoLogradouro() {
+		return endereco.getDescricaoLogradouro();
+	}
+
+
+	public void setDescricaoLogradouro(String descricaoLogradouro) {
+		endereco.setDescricaoLogradouro(descricaoLogradouro);
+	}
+
+
+	public String getComplementoLogradouro() {
+		return endereco.getComplementoLogradouro();
+	}
+
+
+	public void setComplementoLogradouro(String complementoLogradouro) {
+		endereco.setComplementoLogradouro(complementoLogradouro);
+	}
+
+
+	public int getNumero() {
+		return endereco.getNumero();
+	}
+
+
+	public void setNumero(int numero) {
+		endereco.setNumero(numero);
+	}
+
+
+	public String getQuadra() {
+		return endereco.getQuadra();
+	}
+
+
+	public void setQuadra(String quadra) {
+		endereco.setQuadra(quadra);
+	}
+
+
+	public String getLote() {
+		return endereco.getBairro();
+	}
+
+
+	public void setLote(String lote) {
+		endereco.setLote(lote);
+	}
+
+
+	public String getBairro() {
+		return endereco.getBairro();
+	}
+
+
+	public void setBairro(String bairro) {
+		endereco.setBairro(bairro);
+	}
+
+
+	public long getMunicipio() {
+		return endereco.getMunicipio();
+	}
+
+
+	public void setMunicipio(long municipio) {
+		endereco.setMunicipio(municipio);
+	}
+
+
+	public int getUnidadeFederacao() {
+		return endereco.getUnidadeFederacao();
+	}
+
+
+	public void setUnidadeFederacao(int unidadeFederacao) {
+		endereco.setUnidadeFederacao(unidadeFederacao);
+	}
+
+
+	public String getPais() {
+		return endereco.getPais();
+	}
+
+
+	public void setPais(String pais) {
+		endereco.setPais(pais);
+	}
+
+
+	public String getReferencia() {
+		return endereco.getReferencia();
+	}
+
+
+	public void setReferencia(String referencia) {
+		endereco.setReferencia(referencia);
+	}
+
+
+	public String getTipoL() {
+		return endereco.getTipoL();
+	}
+
+
+	public void setTipoL(int tipoLogradouro) {
+		
+		endereco.setTipoL(tipoLogradouro);
+	}
+
+
+	public String getM() {
+		return endereco.getM();
+	}
+
+
+	public void setM(String m) {
+		 endereco.setM(m);
+	}
+
+
+	public String getEstado() {
+		return endereco.getEstado();
+	}
+
+
+	public void setEstado(String estado) {
+		endereco.setEstado(estado);
+	}
 	
 	public abstract void cadastrar();
     public abstract void alterar(DocumentoIdentificacao documento);
     public abstract void excluir(DocumentoIdentificacao documento);
     public abstract void consultar(DocumentoIdentificacao documento);
 }
+

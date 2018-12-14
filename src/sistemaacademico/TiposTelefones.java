@@ -65,6 +65,15 @@ public class TiposTelefones{
     	}
     	return a;
     }
+    public String tipoT(int k) {
+    	String a = "";
+    	for(int i=0;i<size();i++) {
+    		if(k==tiposTelefones.get(i).getCodigo()) {
+    			a = tiposTelefones.get(i).getDescricaoCompleta();
+    		}
+    	}
+    	return a;
+    }
     
 }
 

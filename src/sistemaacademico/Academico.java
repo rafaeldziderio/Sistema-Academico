@@ -52,7 +52,7 @@ public class Academico extends Pessoa {
 		
 		boolean a = true;
 		
-		
+		//NOMEEEEEEEEEEEEEEEEEE
 		String prenome = "";
 		while(a) {
 			int z = 0;
@@ -81,7 +81,7 @@ public class Academico extends Pessoa {
 		}
 		this.setPrenome(prenome);
 		
-		
+		//SOBRENOMEEEEEEEEEEEEEEEEEE
 		String sobrenome = "";
 		while(a) {
 			int z = 0;
@@ -110,7 +110,7 @@ public class Academico extends Pessoa {
 		}
 		this.setSobrenome(sobrenome);
 		
-		
+		//MATRICULAAAAAAAAAAAA
 		long matricula=0;
 		while(a) {
 			try {
@@ -129,7 +129,7 @@ public class Academico extends Pessoa {
 		}
 		this.matricula = matricula;
 		
-		
+		//UFFFFFFFFFFFFFFFFFFFFF
 		int unidF = 0;
 		while(a) {	
 			try {
@@ -161,7 +161,7 @@ public class Academico extends Pessoa {
 		}
 		this.setEstadoCivil(estadoC);
 		
-
+		//Documentoooooooooooooooo
 		int tipoD = 0;
 		while(a) {	
 			try {
@@ -204,8 +204,10 @@ public class Academico extends Pessoa {
 		if(tipoD == 2){
 			while(a) {
 				num1 =JOptionPane.showInputDialog(null, "Digite o seu CPF:");
-					if(ValidaCpf.isCPF(num1) == true)
+					if(ValidaCpf.isCPF(num1) == true) {
+						num = Long.parseLong(num1);
 						break;
+					}
 					else
 						JOptionPane.showMessageDialog(null,"Digite um CPF válido");
 				
@@ -288,6 +290,8 @@ public class Academico extends Pessoa {
 		
 		DocumentoIdentificacao doc = new DocumentoIdentificacao(tipoD,num,orgao,compl,paisD);
 		this.documento = doc;
+		
+	
 		
 		
 		String paisNascimento = "";
@@ -419,6 +423,15 @@ public class Academico extends Pessoa {
 			}
 		}while(verificar3==false);
 		
+		
+		//TELEFONEEEEEEE
+		int tipo1 = 0;
+		long numero1 = 0;
+		int ramal = 0;
+		int ddd = 0;
+		int ddi = 0;
+		int classe = 0;
+		
 		int b = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone residencial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if(b==0) {
 			String[] option2 = new String[Tele.getTiposTelefones().size()];
@@ -427,7 +440,7 @@ public class Academico extends Pessoa {
 				option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
 			}
 
-			int tipo1 = 0;
+			
 			tipo1 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
 
@@ -438,11 +451,11 @@ public class Academico extends Pessoa {
 				option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
 			}
 
-			int classe = 0;
+			
 			classe = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
 
-			int ddi = 0;
+			
 			while (a)
 			{
 				try
@@ -462,7 +475,7 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			int ddd = 0;
+			
 			while(a)
 			{
 				try
@@ -482,7 +495,7 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			long numero1 = 0;
+			
 
 			while(a)
 			{
@@ -505,7 +518,7 @@ public class Academico extends Pessoa {
 			}
 
 
-			int ramal = 0;
+			
 			int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
 					"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
@@ -531,7 +544,15 @@ public class Academico extends Pessoa {
 			}
 			this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
 
-		}
+		}else this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
+		
+		////////////////
+		int tipo2 = 0;
+		int classe2 = 0;
+		int ddi2 = 0;
+		int ddd2 = 0;
+		long numero2 = 0;
+		int ramal2 = 0;
 		
 		int c = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if(c==0) {
@@ -541,8 +562,8 @@ public class Academico extends Pessoa {
 				option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
 			}
 
-			int tipo1 = 0;
-			tipo1 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+			
+			tipo2 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
 
 
@@ -552,17 +573,17 @@ public class Academico extends Pessoa {
 				option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
 			}
 
-			int classe = 0;
-			classe = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+			
+			classe2 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
 
-			int ddi = 0;
+			
 			while (a)
 			{
 				try
 				{
-					ddi = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
-					if(ddi <= 0 || ddi > 9999)
+					ddi2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+					if(ddi2 <= 0 || ddi2 > 9999)
 					{
 						JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
 					}
@@ -576,13 +597,13 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			int ddd = 0;
+			
 			while(a)
 			{
 				try
 				{
-					ddd = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
-					if(ddd < 1 || ddd > 1000)
+					ddd2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+					if(ddd2 < 1 || ddd2 > 1000)
 					{
 						JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
 					}
@@ -596,15 +617,15 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			long numero1 = 0;
+			
 
 			while(a)
 			{
 
 				try
 				{
-					numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
-					if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
+					numero2 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+					if(Long.toString(numero2).length() != 8 && Long.toString(numero2).length() != 9 )
 					{
 						JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
 					}
@@ -619,7 +640,7 @@ public class Academico extends Pessoa {
 			}
 
 
-			int ramal = 0;
+		
 			int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
 					"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
@@ -629,8 +650,8 @@ public class Academico extends Pessoa {
 				{
 					try
 					{
-						ramal = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
-						if(ramal <= 0 || ramal > 9999)
+						ramal2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+						if(ramal2 <= 0 || ramal2 > 9999)
 						{
 							JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
 						}
@@ -643,9 +664,16 @@ public class Academico extends Pessoa {
 
 				}
 			}
-			this.setTelefoneComercial(tipo1, classe, ddi, ddd, numero1, ramal);
+			this.setTelefoneComercial(tipo2, classe2, ddi2, ddd2, numero2, ramal2);
 
-		}
+		}else this.setTelefoneComercial(tipo2, classe2, ddi2, ddd2, numero2, ramal2);
+		/////////////////
+		int tipo3 = 0;
+		int classe3 = 0;
+		int ddi3 = 0;
+		int ddd3 = 0;
+		long numero3 = 0;
+		int ramal3 = 0;
 		
 		int d = JOptionPane.showConfirmDialog(null, "Deseja inserir seu telefone alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 		if(d==0) {
@@ -655,8 +683,8 @@ public class Academico extends Pessoa {
 				option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
 			}
 
-			int tipo1 = 0;
-			tipo1 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+			
+			tipo3 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
 
 
@@ -666,17 +694,17 @@ public class Academico extends Pessoa {
 				option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
 			}
 
-			int classe = 0;
-			classe = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+			
+			classe3 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
 					JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
 
-			int ddi = 0;
+		
 			while (a)
 			{
 				try
 				{
-					ddi = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
-					if(ddi <= 0 || ddi > 9999)
+					ddi3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+					if(ddi3 <= 0 || ddi3 > 9999)
 					{
 						JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
 					}
@@ -690,13 +718,13 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			int ddd = 0;
+		
 			while(a)
 			{
 				try
 				{
-					ddd = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
-					if(ddd < 1 || ddd > 1000)
+					ddd3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+					if(ddd3 < 1 || ddd3 > 1000)
 					{
 						JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
 					}
@@ -710,15 +738,15 @@ public class Academico extends Pessoa {
 				}
 			}
 
-			long numero1 = 0;
+			
 
 			while(a)
 			{
 
 				try
 				{
-					numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
-					if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
+					numero3 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+					if(Long.toString(numero3).length() != 8 && Long.toString(numero3).length() != 9 )
 					{
 						JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
 					}
@@ -733,7 +761,7 @@ public class Academico extends Pessoa {
 			}
 
 
-			int ramal = 0;
+			
 			int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
 					"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
@@ -743,8 +771,8 @@ public class Academico extends Pessoa {
 				{
 					try
 					{
-						ramal = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
-						if(ramal <= 0 || ramal > 9999)
+						ramal3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+						if(ramal3 <= 0 || ramal3 > 9999)
 						{
 							JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
 						}
@@ -757,9 +785,9 @@ public class Academico extends Pessoa {
 
 				}
 			}
-			this.setTelefoneAlternativo(tipo1, classe, ddi, ddd, numero1, ramal);
+			this.setTelefoneAlternativo(tipo3, classe3, ddi3, ddd3, numero3, ramal3);
 
-		}
+		}else this.setTelefoneAlternativo(tipo3, classe3, ddi3, ddd3, numero3, ramal3);
 
 		int tipoL=0;
 		while(a) {	
@@ -869,16 +897,26 @@ public class Academico extends Pessoa {
 	}
 	
 	
+	
+	
 
 	public void alterar(DocumentoIdentificacao documento) {
     	JOptionPane.showMessageDialog(null, "TESTE");
+    	int index = 0;
+    	
+    	for(int z = 0; z < academicos.size(); z++) {
+			if((academicos.get(z).getDocumento().getNumero()) == documento.getNumero() && (academicos.get(z).getDocumento().getTipo()) == documento.getTipo()) {
+				index = z;
+			}
+			
+		}
     	boolean a = true;
     	int opcao = 0;
 		while(a) {	
 			try {
 				opcao = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o dado pessoal que deseja alterar: \n"
-						+ "1 - Email/n2- Estado Civil\n3- Situação Acadêmica\n4- Telefone\n5-Logradouro" ));
-				if(opcao<0 || opcao>27) {
+						+ "1 - Nome\n2 - Email\n3- Estado Civil\n4- Situação Acadêmica\n5- Telefone\n6-Logradouro" ));
+				if(opcao<0 || opcao>7) {
 					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
 				}
 				else
@@ -887,7 +925,706 @@ public class Academico extends Pessoa {
 				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
 			}
 		}
-    }
+		
+		if(opcao == 1) {
+			String prenome = "";
+			while(a) {
+				int z = 0;
+
+				prenome = JOptionPane.showInputDialog(null, "Digite seu novo primeiro nome: ");
+				prenome = prenome.toUpperCase();
+				for(int i = 0; i < prenome.length(); i++)
+				{
+					char x = prenome.charAt(i);
+					switch (x)
+					{
+					case 'A': case 'B': case 'C': case 'D': case 'E': case 'F': case 'G': case 'H': case 'I': case 'J':
+					case 'K': case 'L': case 'M': case 'N': case 'O': case 'P': case 'Q': case 'R': case 'S': case 'T':
+					case 'U': case 'V': case 'W': case 'X': case 'Y': case 'Z': case ' ': case 'Á': case 'Ã': case 'É':
+					case 'Í': case 'Ó': case 'Õ': case 'Ú': case 'Â': case 'Ê': case 'Ô': z++;
+					}
+				}
+				if(z == prenome.length())
+				{
+					break;
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Digite um nome válido!");
+				}
+			}
+			academicos.get(index).setPrenome(prenome);
+			
+			//SOBRENOMEEEEEEEEEEEEEEEEEE
+			String sobrenome = "";
+			while(a) {
+				int z = 0;
+
+				sobrenome = JOptionPane.showInputDialog(null, "Digite seu novo sobrenome: ");
+				sobrenome = sobrenome.toUpperCase();
+				for(int i = 0; i < sobrenome.length(); i++)
+				{
+					char x = sobrenome.charAt(i);
+					switch (x)
+					{
+					case 'A': case 'B': case 'C': case 'D': case 'E': case 'F': case 'G': case 'H': case 'I': case 'J':
+					case 'K': case 'L': case 'M': case 'N': case 'O': case 'P': case 'Q': case 'R': case 'S': case 'T':
+					case 'U': case 'V': case 'W': case 'X': case 'Y': case 'Z': case ' ': case 'Á': case 'Ã': case 'É':
+					case 'Í': case 'Ó': case 'Õ': case 'Ú': case 'Â': case 'Ê': case 'Ô': z++;
+					}
+				}
+				if(z == sobrenome.length())
+				{
+					break;
+				}
+				else
+				{
+					JOptionPane.showMessageDialog(null, "Digite um nome válido!");
+				}
+			}
+			academicos.get(index).setSobrenome(sobrenome);
+		}
+		if(opcao == 2) {
+			boolean verificar = false;
+			do{
+				int z = JOptionPane.showConfirmDialog(null, "Deseja alterar seu email pessoal?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				String prefixo = "";
+				String sufixo ="";
+				if(z==0) {
+					
+					
+					prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+					sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+					academicos.get(index).setEmailPessoal(prefixo, sufixo);
+					
+					verificar = getEmail().validar(getEmail().Email1());
+					
+				}
+				else {
+			
+					break;
+					}
+			}while(verificar==false);
+			
+				
+			boolean verificar2 = false;
+			do{
+				int y = JOptionPane.showConfirmDialog(null, "Deseja alterar email alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				String prefixo = "";
+				String sufixo ="";
+				if(y==0) {
+					
+					
+					prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+					sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+					academicos.get(index).setEmailAlternativo(prefixo, sufixo);
+					
+					verificar2 = getEmail().validar(getEmail().Email1());
+					
+				}
+				else {
+					break;
+					}
+			}while(verificar2==false);
+			
+			boolean verificar3 = false;
+			do{
+				int x = JOptionPane.showConfirmDialog(null, "Deseja alterar seu email comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+				String prefixo = "";
+				String sufixo = "";
+				if(x==0) {
+					
+					
+					prefixo =JOptionPane.showInputDialog(null, "Digite o prefixo de seu email: ");
+					sufixo =JOptionPane.showInputDialog(null, "Digite o sufixo de seu email: ","Exemplo: gmail.com.br");
+					academicos.get(index).setEmailComercial(prefixo, sufixo);
+					
+					verificar3 = getEmail().validar(getEmail().Email1());
+					
+				}
+				else {
+					
+					break;
+				}
+			}while(verificar3==false);
+		}
+		
+		EstadosCivis EC = new EstadosCivis();
+		if(opcao == 3) { 
+			int estadoC = 0;
+			while(a) {	
+				try {
+					estadoC = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o seu novo estado civil a partir do CODIGO: \n" + EC.imprimirEC()));
+					if(estadoC<0 || estadoC>7) {
+						JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+					}
+					else
+						break;
+				}catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+				}
+			}
+			academicos.get(index).setEstadoCivil(estadoC);
+		}
+		if(opcao == 4) {
+			int situacaoA=0;
+			SituacaoAcademica SA = new SituacaoAcademica();
+			while(a) {	
+				try {
+					situacaoA = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha sua nova situação acadêmica a partir do código: \n" + SA.imprimirSA()));
+					if(situacaoA<0 || situacaoA>10) {
+						JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+					}
+					else
+						break;
+				}catch(NumberFormatException e) {
+					JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+				}
+			}
+			academicos.get(index).situacaoAcademica = situacaoA;
+		}
+		if(opcao == 5) {
+			TiposTelefones Tele = new TiposTelefones();
+			ClassesTelefones TelCL = new ClassesTelefones();
+			int tipo1 = 0;
+			long numero1 = 0;
+			int ramal = 0;
+			int ddd = 0;
+			int ddi = 0;
+			int classe = 0;
+			
+			int b = JOptionPane.showConfirmDialog(null, "Deseja alterar seu telefone residencial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(b==0) {
+				String[] option2 = new String[Tele.getTiposTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
+				}
+
+				
+				tipo1 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
+
+
+				String[] option3 = new String[TelCL.getClassesTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
+				}
+
+				
+				classe = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
+
+				
+				while (a)
+				{
+					try
+					{
+						ddi = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+						if(ddi <= 0 || ddi > 9999)
+						{
+							JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+				
+				while(a)
+				{
+					try
+					{
+						ddd = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+						if(ddd < 1 || ddd > 1000)
+						{
+							JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+				
+
+				while(a)
+				{
+
+					try
+					{
+						numero1 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+						if(Long.toString(numero1).length() != 8 && Long.toString(numero1).length() != 9 )
+						{
+							JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+
+				
+				int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
+						"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+				if(k == 0) 
+				{
+					while(a) 
+					{
+						try
+						{
+							ramal = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+							if(ramal <= 0 || ramal > 9999)
+							{
+								JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
+							}
+							else
+								break;
+						}catch(NumberFormatException e)
+						{
+							JOptionPane.showMessageDialog(null, "Digite apenas números.");
+						}
+
+					}
+				}
+				academicos.get(index).setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
+
+			}
+			
+			////////////////
+			int tipo2 = 0;
+			int classe2 = 0;
+			int ddi2 = 0;
+			int ddd2 = 0;
+			long numero2 = 0;
+			int ramal2 = 0;
+			
+			int c = JOptionPane.showConfirmDialog(null, "Deseja alterar seu telefone comercial?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(c==0) {
+				String[] option2 = new String[Tele.getTiposTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
+				}
+
+				
+				tipo2 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
+
+
+				String[] option3 = new String[TelCL.getClassesTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
+				}
+
+				
+				classe2 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
+
+				
+				while (a)
+				{
+					try
+					{
+						ddi2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+						if(ddi2 <= 0 || ddi2 > 9999)
+						{
+							JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+				
+				while(a)
+				{
+					try
+					{
+						ddd2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+						if(ddd2 < 1 || ddd2 > 1000)
+						{
+							JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+				
+
+				while(a)
+				{
+
+					try
+					{
+						numero2 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+						if(Long.toString(numero2).length() != 8 && Long.toString(numero2).length() != 9 )
+						{
+							JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+
+			
+				int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
+						"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+				if(k == 0) 
+				{
+					while(a) 
+					{
+						try
+						{
+							ramal2 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+							if(ramal2 <= 0 || ramal2 > 9999)
+							{
+								JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
+							}
+							else
+								break;
+						}catch(NumberFormatException e)
+						{
+							JOptionPane.showMessageDialog(null, "Digite apenas números.");
+						}
+
+					}
+				}
+				academicos.get(index).setTelefoneComercial(tipo2, classe2, ddi2, ddd2, numero2, ramal2);
+
+			}
+			/////////////////
+			int tipo3 = 0;
+			int classe3 = 0;
+			int ddi3 = 0;
+			int ddd3 = 0;
+			long numero3 = 0;
+			int ramal3 = 0;
+			
+			int d = JOptionPane.showConfirmDialog(null, "Deseja alterar seu telefone alternativo?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(d==0) {
+				String[] option2 = new String[Tele.getTiposTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option2[i] = Tele.getTipoTelefone(i).getDescricaoCompleta();
+				}
+
+				
+				tipo3 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option2, option2[0]);
+
+
+				String[] option3 = new String[TelCL.getClassesTelefones().size()];
+				for(int i = 0; i < 5; i++)
+				{
+					option3[i] = TelCL.getTipoDocumento(i).getDescricaoCompleta();
+				}
+
+				
+				classe3 = JOptionPane.showOptionDialog(null, "Escolha uma opção a seguir: ", "Sistema Acadêmico", 
+						JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, option3, option3[0]);
+
+			
+				while (a)
+				{
+					try
+					{
+						ddi3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código internacional do seu telefone (DDI)"));
+						if(ddi3 <= 0 || ddi3 > 9999)
+						{
+							JOptionPane.showMessageDialog(null, "O DDI está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+			
+				while(a)
+				{
+					try
+					{
+						ddd3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Insira o código Regional do seu telefone (DDD)"));
+						if(ddd3 < 1 || ddd3 > 1000)
+						{
+							JOptionPane.showMessageDialog(null, "O DDD está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+				
+
+				while(a)
+				{
+
+					try
+					{
+						numero3 = Long.parseLong(JOptionPane.showInputDialog(null, "Insira o seu número de telefone residencial"));
+						if(Long.toString(numero3).length() != 8 && Long.toString(numero3).length() != 9 )
+						{
+							JOptionPane.showMessageDialog(null, "O Número está incorreto, insira novamente.");
+						}
+						else
+						{
+							break;
+						}
+					}catch(NumberFormatException e)
+					{
+						JOptionPane.showMessageDialog(null, "Por favor, digite apenas números.");
+					}
+				}
+
+
+				
+				int k = JOptionPane.showConfirmDialog(null, "Você quer digitar o ramal do telefone ?", 
+						"Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+				if(k == 0) 
+				{
+					while(a) 
+					{
+						try
+						{
+							ramal3 = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o Ramal: "));
+							if(ramal3 <= 0 || ramal3 > 9999)
+							{
+								JOptionPane.showMessageDialog(null, "Esta número não é aceito, digite novamente.");
+							}
+							else
+								break;
+						}catch(NumberFormatException e)
+						{
+							JOptionPane.showMessageDialog(null, "Digite apenas números.");
+						}
+
+					}
+				}
+				academicos.get(index).setTelefoneAlternativo(tipo3, classe3, ddi3, ddd3, numero3, ramal3);
+
+			}
+		}
+		if(opcao == 6) {
+			UnidadesFederativas UF = new UnidadesFederativas();
+			TiposLogradouros tipo = new TiposLogradouros();
+			Municipios municipio = new Municipios();
+			int esc = JOptionPane.showConfirmDialog(null, "Deseja alterar o tipo do endereço?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc==0) {
+				int tipoL=0;
+				while(a) {	
+					try {
+						tipoL = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o tipo de logradouro: \n" + tipo.imprimirLogradouro()));
+						if(tipoL<0 || tipoL>30) {
+							JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+						}
+						else
+							break;
+					}catch(NumberFormatException e) {
+						JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+					}
+				}
+				academicos.get(index).setTipoL(tipoL);
+				
+			}
+			int esc2 = JOptionPane.showConfirmDialog(null, "Deseja alterar o CEP?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc2==0) {
+				int cep = 0;
+				while(a) {
+					try {
+						cep = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o CEP:"));
+						break;
+					}catch(NumberFormatException e) {
+						JOptionPane.showMessageDialog(null, "Digite o CEP:");
+					}
+				}
+				academicos.get(index).setCodigoLogradouro(cep);
+			}
+			int esc3 = JOptionPane.showConfirmDialog(null, "Deseja alterar a descrição do endereço?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc3==0) {
+				String desc ="";
+				while(a) {
+					try {
+						desc = JOptionPane.showInputDialog(null, "Digite a descrição do endereço:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite a descrição do endereço:");
+					}
+				}
+				academicos.get(index).setDescricaoLogradouro(desc);
+			}
+			int esc4 = JOptionPane.showConfirmDialog(null, "Deseja alterar o complemento?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc4==0) {
+				String complemento="";
+				while(a) {
+					try {
+						complemento = JOptionPane.showInputDialog(null, "Digite o complemento do endereço:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite o complemento do endereço:");
+					}
+				}
+				academicos.get(index).setComplementoLogradouro(complemento);
+			}
+			int esc5 = JOptionPane.showConfirmDialog(null, "Deseja alterar o número?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc5==0) {
+				int numero = 0;
+				while(a) {
+					try {
+						numero = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite o número da residencia:"));
+						break;
+					}catch(NumberFormatException e) {
+						JOptionPane.showMessageDialog(null, "Digite o número da residencia:");
+					}
+				}
+				academicos.get(index).setNumero(numero);
+			}
+			
+			int esc6 = JOptionPane.showConfirmDialog(null, "Deseja alterar a quadra?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc6==0) {
+				String quadra="";
+				while(a) {
+					try {
+						quadra = JOptionPane.showInputDialog(null, "Digite a quadra do endereço:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite a quadro do endereço:");
+					}
+				}
+				academicos.get(index).setQuadra(quadra);
+			}
+			int esc7 = JOptionPane.showConfirmDialog(null, "Deseja alterar o lote?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc7==0) {
+				String lote="";
+				while(a) {
+					try {
+						lote = JOptionPane.showInputDialog(null, "Digite o lote do endereço:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite o lote do endereço:");
+					}
+				}
+				academicos.get(index).setLote(lote);
+			}
+			int esc8 = JOptionPane.showConfirmDialog(null, "Deseja alterar o bairro?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc8==0) {
+				String bairro="";
+				while(a) {
+					try {
+						bairro = JOptionPane.showInputDialog(null, "Digite o bairro do endereço:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite o bairro do endereço:");
+					}
+				}
+				academicos.get(index).setBairro(bairro);
+			}
+			int esc9 = JOptionPane.showConfirmDialog(null, "Deseja alterar seu município?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc9==0) {
+				long codMunicipio=0;
+				while(a) {	
+					try {
+						codMunicipio = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o código de seu município: \n" + municipio.imprimirM()));
+						break;
+					}catch(NumberFormatException e) {
+						JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+					}
+				}
+				academicos.get(index).setMunicipio(codMunicipio);
+			}
+			int esc10 = JOptionPane.showConfirmDialog(null, "Deseja alterar a UF?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc10==0) {
+				int unidF = 0;
+				while(a) {	
+					try {
+						unidF = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a que você mora a partir do CODIGO: \n" + UF.imprimirUF()));
+						if(unidF<0 || unidF>27) {
+							JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+						}
+						else
+							break;
+					}catch(NumberFormatException e) {
+						JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+					}
+				}
+				academicos.get(index).setUf(unidF);
+			}
+			int esc11 = JOptionPane.showConfirmDialog(null, "Deseja alterar seu país?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc11==0) {
+				String pais="";
+				while(a) {
+					try {
+						pais = JOptionPane.showInputDialog(null, "Digite seu país atual:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Digite seu país atual:");
+					}
+				}
+				academicos.get(index).setPais(pais);
+			}
+			int esc12 = JOptionPane.showConfirmDialog(null, "Deseja alterar sua referência?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+			if(esc12==0) {
+				String referencia ="";
+				while(a) {
+					try {
+						referencia = JOptionPane.showInputDialog(null, "Informe uma referência:");
+						break;
+					}catch(IllegalArgumentException e) {
+						JOptionPane.showMessageDialog(null, "Informe uma referência:");
+					}
+				}
+				academicos.get(index).setReferencia(referencia);
+			}
+			
+			
+			}
+			
+		}
         
     
 
@@ -933,7 +1670,7 @@ public class Academico extends Pessoa {
         			+"\n País: "+academicos.get(index).getDocumento().getPais()
         			+"\t Complemento: "+academicos.get(index).getDocumento().getComplemento()
         			+"\n\n Endereço: "
-        		//	+"\n "+academicos.get(index).getEndereco()
+        			+"\n "+academicos.get(index).getEndereco()
         			
         			); 
     	

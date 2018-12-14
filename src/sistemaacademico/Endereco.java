@@ -47,4 +47,158 @@ public class Endereco {
 				+ ";\nBairro: " + bairro + ";\nMunicípio: " + m + ";\nUF: " + estado + ";\nPais: " + pais
 				+ ";\nReferencia: " + referencia);
 	}
+
+
+	public int getTipoLogradouro() {
+		return tipoLogradouro;
+	}
+
+
+	public void setTipoLogradouro(int tipoLogradouro) {
+		this.tipoLogradouro = tipoLogradouro;
+	}
+
+
+	public int getCodigoLogradouro() {
+		return codigoLogradouro;
+	}
+
+
+	public void setCodigoLogradouro(int codigoLogradouro) {
+		this.codigoLogradouro = codigoLogradouro;
+	}
+
+
+	public String getDescricaoLogradouro() {
+		return descricaoLogradouro;
+	}
+
+
+	public void setDescricaoLogradouro(String descricaoLogradouro) {
+		this.descricaoLogradouro = descricaoLogradouro;
+	}
+
+
+	public String getComplementoLogradouro() {
+		return complementoLogradouro;
+	}
+
+
+	public void setComplementoLogradouro(String complementoLogradouro) {
+		this.complementoLogradouro = complementoLogradouro;
+	}
+
+
+	public int getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+
+	public String getQuadra() {
+		return quadra;
+	}
+
+
+	public void setQuadra(String quadra) {
+		this.quadra = quadra;
+	}
+
+
+	public String getLote() {
+		return lote;
+	}
+
+
+	public void setLote(String lote) {
+		this.lote = lote;
+	}
+
+
+	public String getBairro() {
+		return bairro;
+	}
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
+	public long getMunicipio() {
+		return municipio;
+	}
+
+
+	public void setMunicipio(long municipio) {
+		Municipios municipioO = new Municipios();
+		
+		m = municipioO.muni(municipio);
+	}
+
+
+	public int getUnidadeFederacao() {
+		return unidadeFederacao;
+	}
+
+
+	public void setUnidadeFederacao(int unidadeFederacao) {
+		this.unidadeFederacao = unidadeFederacao;
+	}
+
+
+	public String getPais() {
+		return pais;
+	}
+
+
+	public void setPais(String pais) {
+		this.pais = pais;
+	}
+
+
+	public String getReferencia() {
+		return referencia;
+	}
+
+
+	public void setReferencia(String referencia) {
+		this.referencia = referencia;
+	}
+
+
+	public String getTipoL() {
+		return tipoL;
+	}
+
+
+	public void setTipoL(int tipoLogradouro) {
+		TiposLogradouros tipo = new TiposLogradouros();
+		tipoL = tipo.tipo(tipoLogradouro);
+	}
+
+
+	public String getM() {
+		return m;
+	}
+
+
+	public void setM(String m) {
+		this.m = m;
+	}
+
+
+	public String getEstado() {
+		return estado;
+	}
+
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
 }
