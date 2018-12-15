@@ -1,13 +1,6 @@
 package sistemaacademico;
-/**
- *
- * @author Wanderley de Souza Alencar
- */
-/*
-* Nome.......: Telefone
-* Objetivo...: Representar um número de telefone qualquer.
-* Observacoes:
-*/
+
+ 
 public class Telefone {
     String tipo;
     String classe;
@@ -28,8 +21,8 @@ public class Telefone {
     }
 	
 	public String toString() {
-		return ("Tipo: " + tipo + ";\nClasse: " + classe + ";\nDDI: +" + ddi + ";\nDDD: (" + ddd + ");\nNumero: "
-				+ numero + "\nRamal : " + ramal);
+		return ("\nTipo: " + tipo + "     Classe: " + classe + "\nNúmero: +" + ddi + " (" + ddd + ") "
+				+ numero + "     Ramal : " + ramal);
 	}
     
 }

@@ -36,7 +36,11 @@ public class Email{
 
 
 	public String toString() {
-		return ("Email: " + prefixo + "@" + sufixo + ";");
+		if(sufixo == "" && prefixo == "") {
+			return "Email desconhecido!";
+		}
+		else
+			return ("Email: " + prefixo + "@" + sufixo + "");
 	}
 	
 	public String Email1() {

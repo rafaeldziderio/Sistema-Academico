@@ -42,10 +42,10 @@ public class Endereco {
 	
 	
 	public String toString() {
-		return ("Tipo logradouro: " + tipoL + ";\nCEP: " + codigoLogradouro + ";\nDescrição do logradouro: " + descricaoLogradouro
-				+ ";\nComplemento: " + complementoLogradouro + ";\nNumero: " + numero + ";\nQuadra: " + quadra + ";\nLote: " + lote 
-				+ ";\nBairro: " + bairro + ";\nMunicípio: " + m + ";\nUF: " + estado + ";\nPais: " + pais
-				+ ";\nReferencia: " + referencia);
+		return ("Tipo logradouro: " + tipoL + "     CEP: " + codigoLogradouro + "     Descrição do logradouro: " + descricaoLogradouro
+				+ "\nComplemento: " + complementoLogradouro + "     Numero: " + numero + "     Quadra: " + quadra + "\nLote: " + lote 
+				+ "     Bairro: " + bairro + "     Município: " + m + "\nUF: " + estado + "     Pais: " + pais
+				+ "     Referencia: " + referencia);
 	}
 
 

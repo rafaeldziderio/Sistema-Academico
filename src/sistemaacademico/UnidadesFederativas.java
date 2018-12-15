@@ -21,13 +21,13 @@ public class  UnidadesFederativas {
         elementoDescritivo.setElementoDescritivo(3, "AM", "Amazonas");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(4, "AP", "Amapá¡");
+        elementoDescritivo.setElementoDescritivo(4, "AP", "Amapá");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(5, "BA", "Bahia");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
-        elementoDescritivo.setElementoDescritivo(6, "CE", "Ceará¡");
+        elementoDescritivo.setElementoDescritivo(6, "CE", "Ceará");
         this.ufs.add(elementoDescritivo); 
         elementoDescritivo  = new ElementoDescritivo();
         elementoDescritivo.setElementoDescritivo(7, "DF", "Distrito Federal");
