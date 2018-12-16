@@ -168,8 +168,21 @@ public class Academico extends Pessoa {
 				{
 					JOptionPane.showMessageDialog(null, "Digite uma matrícula válida com 9 dígitos.");
 				}
-				else
-					break;
+				else {	
+					if(academicos.size() == 0)
+						break;
+					else {
+						int r=0;
+						for(int i = 0 ; i< academicos.size(); i++) {
+							if(matricula == academicos.get(i).getMatricula()) {
+								JOptionPane.showMessageDialog(null,"Esta matrícula já está cadastrada em nosso sistema!");
+								r++;
+							}
+						}
+						if(r==0) break;
+					}
+				}
+
 
 			}catch(NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Digite uma matrícula válida!");
@@ -232,7 +245,17 @@ public class Academico extends Pessoa {
 			while(a) {
 				try {
 					num = Long.parseLong((JOptionPane.showInputDialog(null, "Digite o documento do tipo desconhecido:")));
-					break;
+					if(academicos.size()!=0) {
+						int r =0;
+						for(int i = 0 ; i<academicos.size();i++) {
+							if(num == academicos.get(i).getDocumento().getNumero()) {
+								JOptionPane.showMessageDialog(null, "Documento existente!");
+								r++;
+							}
+						}
+						if(r == 0 ) break;
+					}else
+						break;
 				}catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null,"Digite o número do documento:");
 				}
@@ -244,8 +267,22 @@ public class Academico extends Pessoa {
 				try {
 					num1 = JOptionPane.showInputDialog(null, "Digite o seu Registro Geral(RG):");
 					if(num1.length() == 7) {
-						num = Long.parseLong(num1);
-						break;
+						if(academicos.size() != 0) {
+							int r = 0;
+							for(int i = 0; i<academicos.size();i++) {
+								if(Long.parseLong(num1) == academicos.get(i).getDocumento().getNumero()) {
+									JOptionPane.showMessageDialog(null,"Documento já existente!");
+									r++;
+								}
+							}
+							if(r==0) {
+								num = Long.parseLong(num1);
+								break;
+							}
+						}else {
+							num = Long.parseLong(num1);
+							break;
+						}
 					}
 					else
 						JOptionPane.showMessageDialog(null,"RG inválido!");
@@ -260,8 +297,19 @@ public class Academico extends Pessoa {
 			while(a) {
 				num1 =JOptionPane.showInputDialog(null, "Digite o seu CPF:");
 				if(ValidaCpf.isCPF(num1) == true) {
-					num = Long.parseLong(num1);
-					break;
+					if(academicos.size() != 0) {
+						int r = 0;
+						for(int i = 0 ; i<academicos.size();i++) {
+							if(Long.parseLong(num1) == academicos.get(i).getDocumento().getNumero()) {
+								JOptionPane.showMessageDialog(null,"Documento já existente!");
+								r++;
+							}
+						}if(r==0) {
+							num= Long.parseLong(num1);
+							break;
+						}
+					}else break;
+					
 				}
 				else
 					JOptionPane.showMessageDialog(null,"Digite um CPF válido");
@@ -353,7 +401,7 @@ public class Academico extends Pessoa {
 		this.documento = doc;
 
 
-
+/*
 
 
 
@@ -919,6 +967,8 @@ public class Academico extends Pessoa {
 
 		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
 
+		
+		*/
 	}
 
 
