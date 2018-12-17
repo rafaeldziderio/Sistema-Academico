@@ -192,24 +192,9 @@ public class Academico extends Pessoa {
 		}
 		this.matricula = matricula;
 
-		//Unidade Federativa
-		int unidF = 0;
-		while(a) {	
-			try {
-				unidF = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a que você mora a partir do CODIGO: \n" + UF.imprimirUF()));
-				if(unidF<0 || unidF>27) {
-					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
-				}
-				else
-					break;
-			}catch(NumberFormatException e) {
-				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
-			}
-		}
-		this.setUf(unidF);
-
 		//Estado Civil
 		int estadoC = 0;
+		String estado;
 		while(a) {	
 			try {
 				estadoC = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o seu estado civil a partir do CODIGO: \n" + EC.imprimirEC()));
@@ -222,7 +207,8 @@ public class Academico extends Pessoa {
 				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
 			}
 		}
-		this.setEstadoCivil(estadoC);
+		estado = EC.Estado(estadoC);
+		this.setEstadoCivil(estado);
 
 		//Documento
 		int tipoD = 0;
@@ -1010,6 +996,22 @@ public class Academico extends Pessoa {
 			}
 		}
 		
+		int unidF = 0;
+		while(a) {	
+			try {
+				unidF = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha entre as unidades a seguir a que você mora a partir do CODIGO: \n" + UF.imprimirUF()));
+				if(unidF<0 || unidF>27) {
+					JOptionPane.showMessageDialog(null, "Digite um número coerente com os códigos:");
+				}
+				else
+					break;
+			}catch(NumberFormatException e) {
+				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
+			}
+		}
+		this.setUf(unidF);
+		
+		
 		String pais="";
 		while(a) {
 			try {
@@ -1019,6 +1021,7 @@ public class Academico extends Pessoa {
 				JOptionPane.showMessageDialog(null, "Digite seu país atual:");
 			}
 		}
+
 
 		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
 
@@ -1179,6 +1182,7 @@ public class Academico extends Pessoa {
 		}
 
 		EstadosCivis EC = new EstadosCivis();
+		String estado;
 		if(opcao == 3) { 
 			int estadoC = 0;
 			while(a) {	
@@ -1193,7 +1197,10 @@ public class Academico extends Pessoa {
 					JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
 				}
 			}
-			academicos.get(index).setEstadoCivil(estadoC);
+			estado = EC.Estado(estadoC);
+			this.setEstadoCivil(estado);
+
+			academicos.get(index).setEstadoCivil(estado);
 		}
 		if(opcao == 4) {
 			int situacaoA=0;
@@ -1787,7 +1794,7 @@ public class Academico extends Pessoa {
 				+"\n\nNome Completo: "+academicos.get(index).getPrenome()+" "+academicos.get(index).getSobrenome()
 				+"          Número da Matrícula: "+academicos.get(index).getMatricula()
 				+"\nPaís de nascimento: "+academicos.get(index).getPaisNascimento()+"     Estado de nascimento: "+academicos.get(index).getUfNascimento()+"     Município de nascimento: "+academicos.get(index).getMunicipioNascimento()
-				+"\nData de nascimento: "+academicos.get(index).getDataNascimento()
+				+"\nData de nascimento: "+academicos.get(index).getDataNascimento()+"     Estado Civil: "+academicos.get(index).getEstadoCivil()
 				+"\n"+academicos.get(index).getEmailPessoal()
 				+"          "+academicos.get(index).getEmailComercial()
 				+"          "+academicos.get(index).getEmailAlternativo()
@@ -1795,7 +1802,7 @@ public class Academico extends Pessoa {
 				+"\n\nTelefone Comercial: "+academicos.get(index).getTelefoneComercial()
 				+"\n\nTelefone Alternativo: "+academicos.get(index).getTelefoneAlternativo()
 				+"\n\n DOCUMENTO DE IDENTIFICAÇÃO: "
-				+"\n Tipo: "+academicos.get(index).getDocumento().getTipo()
+				+"\n Tipo: "+academicos.get(index).getDocumento().getTipo1()
 				+"          Número: "+academicos.get(index).getDocumento( ).getNumero()
 				+"          Orgão Expedidor: "+academicos.get(index).getDocumento().getOrgaoExpedidor()
 				+"\n País: "+academicos.get(index).getDocumento().getPais()

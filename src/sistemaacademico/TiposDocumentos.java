@@ -67,4 +67,15 @@ public class TiposDocumentos {
     	}
     	return a;
     }
+    
+    public String tipoD(int k) {
+    	
+    	String a = "";
+    	for(int i=0;i<size();i++) {
+    		if(k==tiposDocumentos.get(i).getCodigo()) {
+    			a = tiposDocumentos.get(i).getDescricaoCompleta();
+    		}
+    	}
+    	return a;
+    }
 }

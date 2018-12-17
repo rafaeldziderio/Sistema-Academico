@@ -81,4 +81,13 @@ public class EstadosCivis {
     	}
     	return a;
     }
+    public String Estado(int k) {
+    	String a = "";
+    	for(int i=0;i<size();i++) {
+    		if(k==estadosCivis.get(i).getCodigo()) {
+    			a = estadosCivis.get(i).getDescricaoCompleta();
+    		}
+    	}
+    	return a;
+    }
 }

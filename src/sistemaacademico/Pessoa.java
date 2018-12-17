@@ -15,7 +15,7 @@ public abstract class Pessoa {
     private String municipioNascimento;    // Código do munícipio
     private String ufNascimento;
     private String paisNascimento;
-    private int estadoCivil;            // Código do estado civil
+    private String estadoCivil;            // Código do estado civil
     private Endereco endereco;
     private Telefone telefoneResidencial;
     private Telefone telefoneComercial;
@@ -71,10 +71,10 @@ public abstract class Pessoa {
 		this.paisNascimento = paisNascimento;
 	}
 	
-	public int getEstadoCivil() {
+	public String getEstadoCivil() {
 		return estadoCivil;
 	}
-	public void setEstadoCivil(int estadoCivil) {
+	public void setEstadoCivil(String estadoCivil) {
 		this.estadoCivil = estadoCivil;
 	}
 	public DocumentoIdentificacao getDocumento(){
