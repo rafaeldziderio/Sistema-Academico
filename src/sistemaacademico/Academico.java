@@ -52,7 +52,7 @@ public class Academico extends Pessoa {
 
 		boolean a = true;
 
-		//NOMEEEEEEEEEEEEEEEEEE
+		//prenome
 		String prenome = "";
 		while(a) {
 			int z = 0;
@@ -81,7 +81,7 @@ public class Academico extends Pessoa {
 		}
 		this.setPrenome(prenome);
 
-		//SOBRENOMEEEEEEEEEEEEEEEEEE
+		//Sobrenome
 		String sobrenome = "";
 		while(a) {
 			int z = 0;
@@ -109,7 +109,8 @@ public class Academico extends Pessoa {
 			}
 		}
 		this.setSobrenome(sobrenome);
-
+		
+		//Data de Nascimento
 		String data;
 		Date data1;
 		while(a) {
@@ -122,7 +123,7 @@ public class Academico extends Pessoa {
 				JOptionPane.showMessageDialog(null,"Digite a data de maneira correta!");
 			}
 		}
-
+		//País de Nascimento
 		String paisNascimento = "";
 		while(a) {
 			try {
@@ -134,7 +135,7 @@ public class Academico extends Pessoa {
 		}
 		this.setPaisNascimento(paisNascimento);
 
-
+		//Estado de nascimento
 		String ufNascimento="";
 		while(a) {
 			try {
@@ -146,7 +147,7 @@ public class Academico extends Pessoa {
 		}
 		this.setUfNascimento(ufNascimento);
 
-
+		//Cidade de Nascimento
 		String munNascimento="";
 		while(a) {
 			try {
@@ -159,7 +160,7 @@ public class Academico extends Pessoa {
 		this.setMunicipioNascimento(munNascimento);
 
 
-		//MATRICULAAAAAAAAAAAA
+		//Matricula
 		long matricula=0;
 		while(a) {
 			try {
@@ -191,7 +192,7 @@ public class Academico extends Pessoa {
 		}
 		this.matricula = matricula;
 
-		//UFFFFFFFFFFFFFFFFFFFFF
+		//Unidade Federativa
 		int unidF = 0;
 		while(a) {	
 			try {
@@ -207,7 +208,7 @@ public class Academico extends Pessoa {
 		}
 		this.setUf(unidF);
 
-
+		//Estado Civil
 		int estadoC = 0;
 		while(a) {	
 			try {
@@ -223,7 +224,7 @@ public class Academico extends Pessoa {
 		}
 		this.setEstadoCivil(estadoC);
 
-		//Documentoooooooooooooooo
+		//Documento
 		int tipoD = 0;
 		while(a) {	
 			try {
@@ -240,7 +241,7 @@ public class Academico extends Pessoa {
 
 
 		long num = 0;
-		String num1 = "";
+		String num1 = null;
 		if(tipoD == 0){
 			while(a) {
 				try {
@@ -262,6 +263,7 @@ public class Academico extends Pessoa {
 			}
 		}
 
+
 		if(tipoD == 1){
 			while(a) {
 				try {
@@ -271,7 +273,7 @@ public class Academico extends Pessoa {
 							int r = 0;
 							for(int i = 0; i<academicos.size();i++) {
 								if(Long.parseLong(num1) == academicos.get(i).getDocumento().getNumero()) {
-									JOptionPane.showMessageDialog(null,"Documento já existente!");
+									JOptionPane.showMessageDialog(null,"RG já existente!");
 									r++;
 								}
 							}
@@ -279,10 +281,14 @@ public class Academico extends Pessoa {
 								num = Long.parseLong(num1);
 								break;
 							}
+
+
 						}else {
 							num = Long.parseLong(num1);
 							break;
 						}
+
+
 					}
 					else
 						JOptionPane.showMessageDialog(null,"RG inválido!");
@@ -293,23 +299,28 @@ public class Academico extends Pessoa {
 			}
 		}
 
+
 		if(tipoD == 2){
 			while(a) {
 				num1 =JOptionPane.showInputDialog(null, "Digite o seu CPF:");
+
 				if(ValidaCpf.isCPF(num1) == true) {
 					if(academicos.size() != 0) {
 						int r = 0;
-						for(int i = 0 ; i<academicos.size();i++) {
+						for(int i = 0 ; i < academicos.size(); i++) {
 							if(Long.parseLong(num1) == academicos.get(i).getDocumento().getNumero()) {
-								JOptionPane.showMessageDialog(null,"Documento já existente!");
+								JOptionPane.showMessageDialog(null,"CPF já existente!");
 								r++;
 							}
 						}if(r==0) {
-							num= Long.parseLong(num1);
+							num = Long.parseLong(num1);
 							break;
 						}
-					}else break;
-					
+					}else {
+						num = Long.parseLong(num1);
+						break;
+					}
+
 				}
 				else
 					JOptionPane.showMessageDialog(null,"Digite um CPF válido");
@@ -317,11 +328,23 @@ public class Academico extends Pessoa {
 			}
 		}
 
+
+
 		if(tipoD == 3){
 			while(a) {
 				try {
 					num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite a sua carteira profissional(CP):"));
-					break;
+					if(academicos.size()!=0) {
+						int r =0;
+						for(int i = 0 ; i<academicos.size();i++) {
+							if(num == academicos.get(i).getDocumento().getNumero()) {
+								JOptionPane.showMessageDialog(null, "Carteira profissional existente!");
+								r++;
+							}
+						}
+						if(r == 0 ) break;
+					}else
+						break;
 				}catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null, "Digite o número da sua carteira profissional(CP):");
 				}
@@ -333,8 +356,25 @@ public class Academico extends Pessoa {
 				try {
 					num1 = JOptionPane.showInputDialog(null, "Digite o seu passaporte(PST):");
 					if(num1.length() == 9) {
-						num = Long.parseLong(num1);
-						break;
+						if(academicos.size() != 0) {
+							int r = 0;
+							for(int i = 0; i<academicos.size();i++) {
+								if(Long.parseLong(num1) == academicos.get(i).getDocumento().getNumero()) {
+									JOptionPane.showMessageDialog(null,"Passaporte já existente!");
+									r++;
+								}
+							}
+							if(r==0) {
+								num = Long.parseLong(num1);
+								break;
+							}
+
+
+						}else {
+							num = Long.parseLong(num1);
+							break;
+						}
+
 					}
 					else
 						JOptionPane.showMessageDialog(null,"Passaporte inválido!");
@@ -345,11 +385,24 @@ public class Academico extends Pessoa {
 			}
 		}
 
+
+
 		if(tipoD == 5){
 			while(a) {
 				try {
 					num = Long.parseLong(JOptionPane.showInputDialog(null, "Digite o documento do tipo outro:"));
-					break;
+					if(academicos.size()!=0) {
+						int r =0;
+						for(int i = 0 ; i<academicos.size();i++) {
+							if(num == academicos.get(i).getDocumento().getNumero()) {
+								JOptionPane.showMessageDialog(null, "Documento existente!");
+								r++;
+							}
+						}
+						if(r == 0 ) break;
+					}else
+						break;
+
 				}catch(NumberFormatException e) {
 					JOptionPane.showMessageDialog(null,"Digite o número deste documento:");
 				}
@@ -401,10 +454,7 @@ public class Academico extends Pessoa {
 		this.documento = doc;
 
 
-/*
-
-
-
+		//Situação Acadêmica
 		int situacaoA=0;
 		while(a) {	
 			try {
@@ -420,6 +470,7 @@ public class Academico extends Pessoa {
 		}
 		this.situacaoAcademica = situacaoA;
 
+		//Email
 		boolean verificar = false;
 		do{
 			int z = JOptionPane.showConfirmDialog(null, "Deseja inserir um email pessoal?", "Sistema Acadêmico", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
@@ -485,7 +536,7 @@ public class Academico extends Pessoa {
 		}while(verificar3==false);
 
 
-		//TELEFONEEEEEEE
+		//Telefone
 		int tipo1 = 0;
 		long numero1 = 0;
 		int ramal = 0;
@@ -607,7 +658,7 @@ public class Academico extends Pessoa {
 
 		}else this.setTelefoneResidencial(tipo1, classe, ddi, ddd, numero1, ramal);
 
-		////////////////
+		//Outro  telefone
 		int tipo2 = 0;
 		int classe2 = 0;
 		int ddi2 = 0;
@@ -728,7 +779,8 @@ public class Academico extends Pessoa {
 			this.setTelefoneComercial(tipo2, classe2, ddi2, ddd2, numero2, ramal2);
 
 		}else this.setTelefoneComercial(tipo2, classe2, ddi2, ddd2, numero2, ramal2);
-		/////////////////
+		
+		//Outro telefone
 		int tipo3 = 0;
 		int classe3 = 0;
 		int ddi3 = 0;
@@ -850,6 +902,7 @@ public class Academico extends Pessoa {
 
 		}else this.setTelefoneAlternativo(tipo3, classe3, ddi3, ddd3, numero3, ramal3);
 
+		//Endereço
 		int cep = 0;
 		String cep1 ="";
 		while(a) {
@@ -950,11 +1003,13 @@ public class Academico extends Pessoa {
 		while(a) {	
 			try {
 				codMunicipio = Integer.parseInt(JOptionPane.showInputDialog(null,  "Escolha o código de seu município: \n" + municipio.imprimirM()));
-				break;
+				if(codMunicipio == 0 || codMunicipio == 5201405 || codMunicipio == 5208707)
+					break;
 			}catch(NumberFormatException e) {
 				JOptionPane.showMessageDialog(null, "Digite o código corretamente: ");
 			}
 		}
+		
 		String pais="";
 		while(a) {
 			try {
@@ -967,8 +1022,8 @@ public class Academico extends Pessoa {
 
 		setEndereco(tipoL, cep, desc, complemento, numero, quadra, lote, bairro, codMunicipio, unidF, pais, referencia);
 
-		
-		*/
+
+		 
 	}
 
 
@@ -976,7 +1031,6 @@ public class Academico extends Pessoa {
 
 
 	public void alterar(DocumentoIdentificacao documento) {
-		JOptionPane.showMessageDialog(null, "TESTE");
 		int index = 0;
 
 		for(int z = 0; z < academicos.size(); z++) {
@@ -1743,7 +1797,7 @@ public class Academico extends Pessoa {
 				+"\n\n DOCUMENTO DE IDENTIFICAÇÃO: "
 				+"\n Tipo: "+academicos.get(index).getDocumento().getTipo()
 				+"          Número: "+academicos.get(index).getDocumento( ).getNumero()
-				+"          Orgão Expeditor: "+academicos.get(index).getDocumento().getOrgaoExpedidor()
+				+"          Orgão Expedidor: "+academicos.get(index).getDocumento().getOrgaoExpedidor()
 				+"\n País: "+academicos.get(index).getDocumento().getPais()
 				+"          Complemento: "+academicos.get(index).getDocumento().getComplemento()
 				+"\n\n Endereço: "
