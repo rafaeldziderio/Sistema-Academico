@@ -253,7 +253,7 @@ public class Academico extends Pessoa {
 		if(tipoD == 1){
 			while(a) {
 				try {
-					num1 = JOptionPane.showInputDialog(null, "Digite o seu Registro Geral(RG):");
+					num1 = JOptionPane.showInputDialog(null, "Digite o seu Registro Geral(RG):","Sete dígitos");
 					if(num1.length() == 7) {
 						if(academicos.size() != 0) {
 							int r = 0;
@@ -340,7 +340,7 @@ public class Academico extends Pessoa {
 		if(tipoD == 4){
 			while(a) {
 				try {
-					num1 = JOptionPane.showInputDialog(null, "Digite o seu passaporte(PST):");
+					num1 = JOptionPane.showInputDialog(null, "Digite o seu passaporte(PST):","Nove dígitos");
 					if(num1.length() == 9) {
 						if(academicos.size() != 0) {
 							int r = 0;
