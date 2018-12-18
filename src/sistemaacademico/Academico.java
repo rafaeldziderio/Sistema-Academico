@@ -470,6 +470,9 @@ public class Academico extends Pessoa {
 				setEmailPessoal(prefixo, sufixo);
 
 				verificar = getEmail().validar(getEmail().Email1());
+				
+				if(verificar == false)
+					JOptionPane.showMessageDialog(null, "Email inválido!");
 
 			}
 			else {
@@ -492,6 +495,9 @@ public class Academico extends Pessoa {
 				setEmailAlternativo(prefixo, sufixo);
 
 				verificar2 = getEmail().validar(getEmail().Email1());
+				
+				if(verificar2 == false)
+					JOptionPane.showMessageDialog(null, "Email inválido!");
 
 			}
 			else {
@@ -513,6 +519,9 @@ public class Academico extends Pessoa {
 				setEmailComercial(prefixo, sufixo);
 
 				verificar3 = getEmail().validar(getEmail().Email1());
+				
+				if(verificar3 == false)
+					JOptionPane.showMessageDialog(null, "Email inválido!");
 
 			}
 			else {
@@ -1130,6 +1139,9 @@ public class Academico extends Pessoa {
 					academicos.get(index).setEmailPessoal(prefixo, sufixo);
 
 					verificar = getEmail().validar(getEmail().Email1());
+					
+					if(verificar == false)
+						JOptionPane.showMessageDialog(null, "Email inválido!");
 
 				}
 				else {
@@ -1152,6 +1164,9 @@ public class Academico extends Pessoa {
 					academicos.get(index).setEmailAlternativo(prefixo, sufixo);
 
 					verificar2 = getEmail().validar(getEmail().Email1());
+					
+					if(verificar2 == false)
+						JOptionPane.showMessageDialog(null, "Email inválido!");
 
 				}
 				else {
@@ -1172,6 +1187,9 @@ public class Academico extends Pessoa {
 					academicos.get(index).setEmailComercial(prefixo, sufixo);
 
 					verificar3 = getEmail().validar(getEmail().Email1());
+					
+					if(verificar3 == false)
+						JOptionPane.showMessageDialog(null, "Email inválido!");
 
 				}
 				else {
